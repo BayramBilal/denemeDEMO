@@ -1,1 +1,0 @@
-Feature: Ameliyat Randevu Oluşturma

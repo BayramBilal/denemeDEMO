@@ -49,6 +49,21 @@ public class LoginPage {
    public WebElement giris;
 
 
+    @FindBy(xpath = "//a[.='Hasta İşlemleri']")
+    public WebElement hastaislemleri;
+
+    @FindBy(xpath = "//a[.='Ayaktan Hasta İşlemleri']")
+    public WebElement AyaktanHastaislemleri;
+
+    @FindBy(xpath = "//a[.='Poliklinik Muayene Kayıt']")
+    public WebElement PoliklinikMuayeneKayit;
+
+   @FindBy (xpath = "//a[.='Ameliyathane İşlemleri']")
+   public WebElement ameliyathaneIslemleri;
+
+    @FindBy (xpath = "//a[.='Doktor Ameliyathane İşlemleri']")
+    public WebElement drAmeliyathaneIslemleri;
+
    public void login() {
       kullanici_kodu.sendKeys(ConfigurationReader.getProperty("USER_KODU"));
       sifre.sendKeys(ConfigurationReader.getProperty("SIFRE"));
