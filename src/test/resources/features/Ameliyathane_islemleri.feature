@@ -1,13 +1,10 @@
 Feature: Probel Ameliyathane İşlemleri
 
   Background:
-
     Given the user logs in
-    Then the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
 
 
   Scenario: Ameliyat Randevu Oluşturma
-
 
 
 
@@ -17,15 +14,13 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-
   Scenario: Ameliyathane İşlemleri Oluşturma
 
 
 
 
-
   Scenario: Doktor Ameliyathane İşlemleri
-
+    Then the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
 
 
 
