@@ -127,7 +127,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void selectsTheApprovedSalonAndSeeThePatient() {
     }
 
-    @And("Select the Seabsı Baslat and click the Ameliyat Başlat")
+    @And("Select the Seansı Baslat and click the Ameliyat Başlat")
     public void selectTheSeansıBaslatAndClickTheAmeliyatBaşlat() {
     }
 
