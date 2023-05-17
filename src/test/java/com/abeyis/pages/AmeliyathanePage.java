@@ -15,6 +15,44 @@ public class AmeliyathanePage {
 
     // Ameliyat Randevu Oluşturma - Veli
 
+    @FindBy(xpath = "//*[@id=\"TXT_TARIH\"]")
+    public WebElement RandevuTarihi1;
+
+    @FindBy(xpath = "//*[@id=\"BIRIM_KODU_ANA\"]")
+    public WebElement AmeliyatBirimKodu;
+
+    @FindBy(xpath = "//*[@id=\"AmeliyatBirimListe_DXFREditorcol1_I\"]")
+    public WebElement AmeliyatBirimListe;
+
+    @FindBy(xpath = "//*[@id=\"AmeliyatBirimListe_tccell0_2\"]/a")
+    public WebElement KbbServisiSec;
+
+    @FindBy(xpath = "//*[@id=\"divAmeliyatRandevu\"]/div[1]/a[2]")
+    public WebElement YeniRandevuButton;
+
+    @FindBy(xpath = "//*[@id=\"RANDEVU_TARIHI\"]")
+    public WebElement RandevuTarihi2;
+
+    @FindBy(xpath = "//*[@id=\"divRndDetay\"]/div[2]/div/div[18]/a")
+    public WebElement RandevuSaatiListe;
+
+    @FindBy(xpath = "//*[@id=\"aRandevuSaat\"]/div[2]/div[2]/div/a[7]")
+    public WebElement RandevuSaatiOn;
+
+    @FindBy(xpath = "//*[@id=\"PROTOKOL_NO_RND\"]")
+    public WebElement ProtokolNoRandevu;
+
+    @FindBy(xpath = "//*[@id=\"TETKIK_ADI\"]")
+    public WebElement AmeliyatAdiListe;
+
+    @FindBy(xpath = "//*[@id=\"AmeliyatListe_tccell7_2\"]/a")
+    public WebElement AmeliyatAbdominoplasti;
+
+    @FindBy(xpath = "//*[@id=\"PopupSaveButton_0\"]")
+    public WebElement AmeliyatRandevuKaydetButton;
+
+    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_DXDataRow0\"]/td[2]")
+    public WebElement RandevuVerildiText;
 
 
 
