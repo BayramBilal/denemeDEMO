@@ -45,6 +45,10 @@ Feature: Probel Ameliyathane İşlemleri
 
   Scenario: Doktor Ameliyathane İşlemleri
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
+    And Selects the approved salon and see the patient
+    And Select the Seabsı Baslat and click the Ameliyat Başlat
+    And Click the Seansı Bitir button and finish the surgery
+    Then Send the patient to the service
 
 
 
