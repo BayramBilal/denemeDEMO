@@ -5,7 +5,6 @@ Feature: Probel Ameliyathane İşlemleri
 
 @ameliyat
   Scenario: Ameliyat Randevu Oluşturma
-
     When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
     And Enter service code and selects service
     And Clicks Yeni Randevu button
@@ -17,7 +16,6 @@ Feature: Probel Ameliyathane İşlemleri
 
 
   Scenario: Ameliyat Listesi Oluşturma
-
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
     And Add Salon from Salon Islemleri
@@ -37,7 +35,6 @@ Feature: Probel Ameliyathane İşlemleri
 
 
   Scenario: Ameliyathane İşlemleri Oluşturma
-
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And Approve the selected salon name
     And Patient is sent to the surgery hall
@@ -47,17 +44,11 @@ Feature: Probel Ameliyathane İşlemleri
 
 
   Scenario: Doktor Ameliyathane İşlemleri
-
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
-    And Selects the approved salon and see the patient
-    And Select the Seabsı Baslat and click the Ameliyat Başlat
-    And Click the Seansı Bitir button and finish the surgery
-    Then Send the patient to the service
 
 
 
 
 
   Scenario: Ameliyathane Malzeme İşlemleri
-
-    When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme islemi
+    When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane Malzeme
