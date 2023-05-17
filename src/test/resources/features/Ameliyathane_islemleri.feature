@@ -16,11 +16,20 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-
   Scenario: Ameliyat Listesi Oluşturma
 
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
+    And Add Salon from Salon Islemleri
+    And Select the patient to be operated
+    And Set the operation time
+    And Add operation at Hastaya Yapilacak Ameliyatlar
+    And Select Surgical Surgery Team at
+    And Select the person responsible for the Surgical Surgery Team
+    And Select Anesthesia Surgery Team
+    And Select the person responsible for the Anesthesia Surgery Team
+    And Report operating room by clicking Ameliyathane Bildir
+    Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
 

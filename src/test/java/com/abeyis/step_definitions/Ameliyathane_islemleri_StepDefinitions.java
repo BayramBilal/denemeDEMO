@@ -3,6 +3,7 @@ package com.abeyis.step_definitions;
 import com.abeyis.pages.AmeliyathanePage;
 import com.abeyis.pages.LoginPage;
 import com.abeyis.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -58,4 +59,87 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     }
 
+    @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste")
+    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneListe() {
+    }
+
+    @And("Selects date and service information")
+    public void selectsDateAndServiceInformation() {
+    }
+
+    @And("Add Salon from Salon Islemleri")
+    public void addSalonFromSalonIslemleri() {
+    }
+
+    @And("Select the patient to be operated")
+    public void selectThePatientToBeOperated() {
+    }
+
+    @And("Set the operation time")
+    public void setTheOperationTime() {
+    }
+
+    @And("Add operation at Hastaya Yapilacak Ameliyatlar")
+    public void addOperationAtHastayaYapilacakAmeliyatlar() {
+    }
+
+    @And("Select Surgical Surgery Team at")
+    public void selectSurgicalSurgeryTeamAt() {
+    }
+
+    @And("Select the person responsible for the Surgical Surgery Team")
+    public void selectThePersonResponsibleForTheSurgicalSurgeryTeam() {
+    }
+
+    @And("Select Anesthesia Surgery Team")
+    public void selectAnesthesiaSurgeryTeam() {
+    }
+
+    @And("Select the person responsible for the Anesthesia Surgery Team")
+    public void selectThePersonResponsibleForTheAnesthesiaSurgeryTeam() {
+    }
+
+    @And("Report operating room by clicking Ameliyathane Bildir")
+    public void reportOperatingRoomByClickingAmeliyathaneBildir() {
+    }
+
+    @Then("Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name")
+    public void surgeryListIsCreatedAmeliyathaneBildirButtonDisappearsAndACheckmarkAppearsToTheRightOfTheSalonName() {
+    }
+
+    @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri")
+    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneIslemleri() {
+    }
+
+    @And("Approve the selected salon name")
+    public void approveTheSelectedSalonName() {
+    }
+
+    @And("Patient is sent to the surgery hall")
+    public void patientIsSentToTheSurgeryHall() {
+    }
+
+    @Then("Ameliyathaneye indirildi is visiable")
+    public void ameliyathaneyeIndirildiIsVisiable() {
+    }
+
+    @And("Selects the approved salon and see the patient")
+    public void selectsTheApprovedSalonAndSeeThePatient() {
+    }
+
+    @And("Select the Seabsı Baslat and click the Ameliyat Başlat")
+    public void selectTheSeabsıBaslatAndClickTheAmeliyatBaşlat() {
+    }
+
+    @And("Click the Seansı Bitir button and finish the surgery")
+    public void clickTheSeansıBitirButtonAndFinishTheSurgery() {
+    }
+
+    @Then("Send the patient to the service")
+    public void sendThePatientToTheService() {
+    }
+
+    @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme islemi")
+    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneMalzemeIslemi() {
+    }
 }
