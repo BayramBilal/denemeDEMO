@@ -26,9 +26,7 @@ public class US01_Login_StepDefinitions {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
 
-        loginPage.hastaislemleri.click();
-        loginPage.ameliyathaneIslemleri.click();
-        loginPage.drAmeliyathaneIslemleri.click();
+
 
 
 
