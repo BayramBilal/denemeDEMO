@@ -2,10 +2,13 @@ package com.abeyis.step_definitions;
 
 import com.abeyis.pages.AmeliyathanePage;
 import com.abeyis.pages.LoginPage;
+import com.abeyis.utilities.BrowserUtils;
 import com.abeyis.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,44 +20,53 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
     public void the_user_hover_over_ameliyathane_işlemleri_and_selects_ameliyat_randevu() {
-
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
         loginPage.hastaislemleri.click();
         loginPage.ameliyathaneIslemleri.click();
         loginPage.ameliyathaneRandevu.click();
-
-
     }
     @When("Enter service code and selects service")
     public void enter_service_code_and_selects_service() {
-
-
-
+        ameliyathanePage.AmeliyatBirimKodu.click();
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
     }
     @When("Clicks Yeni Randevu button")
     public void clicks_yeni_randevu_button() {
-
-
-
-
+        ameliyathanePage.YeniRandevuButton.click();
     }
     @When("Selects patient using protocol number")
     public void selects_patient_using_protocol_number() {
-
-
-
+        ameliyathanePage.ProtokolNoRandevu.sendKeys("501071678");
+        ameliyathanePage.ProtokolNoRandevu.sendKeys(Keys.ENTER);
     }
     @When("Enters the Ameliyat-randevu date-time and save")
     public void enters_the_ameliyat_randevu_date_time_and_save() {
-
-
-
+        ameliyathanePage.ameliyatAdiListe.click();
+        ameliyathanePage.abdominoplastiSec.click();
+        ameliyathanePage.randevuTarihi2.click();
+        ameliyathanePage.selectMonth.click();
+        ameliyathanePage.optionHaziran.click();
+        ameliyathanePage.haziranBir.click();
+        ameliyathanePage.saatSec.click();
+        ameliyathanePage.saatOnBir.click();
+        ameliyathanePage.ameliyatRandevuKaydetButton.click();
     }
+    String expectedResult = "Randevu Verildi";
+    String actualResult;
     @Then("Randevu Verildi text is seen")
     public void randevu_verildi_text_is_seen() {
-
-
+        ameliyathanePage.inputTarihAna.click();
+        ameliyathanePage.selectMonthAna.click();
+        ameliyathanePage.optionHaziranAna.click();
+        ameliyathanePage.haziranBirAna.click();
+        BrowserUtils.waitFor(2);
+        actualResult = ameliyathanePage.randevuVerildiText.getText();
+        Assert.assertEquals(expectedResult,actualResult);
+        System.out.println("actualResult = " + actualResult);
 
 
     }
