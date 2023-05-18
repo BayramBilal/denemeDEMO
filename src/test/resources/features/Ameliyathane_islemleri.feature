@@ -44,18 +44,19 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-  Scenario: Doktor Ameliyathane İşlemleri
+  Scenario: Doktor Ameliyathane İşlemleri (Salon onayı sonrası)
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
     And Selects the approved salon and see the patient
-    And Select the Seansı Baslat and click the Ameliyat Başlat
+    And Click the Seansı Baslat button and see the info of patient as Anestezi Başladı
+    And Click the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı
     And Click the Seansı Bitir button and finish the surgery
-    Then Send the patient to the service
+    Then Send the patient to the service using POSTOP button
 
 
 
 
 
-  Scenario: Ameliyathane Malzeme İşlemleri
+  Scenario: Ameliyathane Malzeme İşlemleri (Salon onayı sonrası hasta buraya gelir)
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
 
 
@@ -63,4 +64,4 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-  Scenario: Ameliyathane Malzeme İşlemleri
+  Scenario: Ameliyat Bilgi Giriş İşlemleri

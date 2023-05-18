@@ -198,21 +198,21 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @And("Selects the approved salon and see the patient")
     public void selectsTheApprovedSalonAndSeeThePatient() {
 
-
-
-
     }
 
-    @And("Select the Seansı Baslat and click the Ameliyat Başlat")
-    public void selectTheSeansıBaslatAndClickTheAmeliyatBaşlat() {
+    @And("Click the Seansı Baslat button and see the info of patient as Anestezi Başladı")
+    public void clickTheSeansıBaslatButtonAndSeeTheInfoOfPatientAsAnesteziBaşladı() {
     }
 
+    @And("Click the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı")
+    public void clickTheSaatlerButtonEnterTheTimeAndSeeTheInfoOfPatientAsSalonaGirişYaptı() {
+    }
     @And("Click the Seansı Bitir button and finish the surgery")
     public void clickTheSeansıBitirButtonAndFinishTheSurgery() {
     }
 
-    @Then("Send the patient to the service")
-    public void sendThePatientToTheService() {
+    @Then("Send the patient to the service using POSTOP button")
+    public void sendThePatientToTheServiceUsingPOSTOPButton() {
     }
 
 
