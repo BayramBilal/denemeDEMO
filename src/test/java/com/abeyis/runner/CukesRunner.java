@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         stepNotifications = true,
         publish = true,
-        tags = ""
+        tags = "@ameliyat"
 )
 
 public class CukesRunner {

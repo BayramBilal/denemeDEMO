@@ -3,7 +3,7 @@ Feature: Probel Ameliyathane İşlemleri
   Background:
     Given the user logs in
 
-@ameliyat
+
   Scenario: Ameliyat Randevu Oluşturma
     When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
     And Enter service code and selects service
@@ -14,7 +14,7 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-
+  @ameliyat
   Scenario: Ameliyat Listesi Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information

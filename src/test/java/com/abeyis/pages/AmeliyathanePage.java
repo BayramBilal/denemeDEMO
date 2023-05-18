@@ -68,17 +68,23 @@ public class AmeliyathanePage {
 
     // Ameliyat Listesi Oluşturma - Ali (Zafer)
 
+    @FindBy(id = "AMELIYAT_LST_TARIH")
+    public WebElement AmeliyatTarih;
+
+    @FindBy(id = "lstServis-SERVIS_KODU")
+    public WebElement ServisKodu;
+
+    @FindBy(id = "lstServis_DXFREditorcol1")
+    public WebElement ServisKodu2;
+
+    @FindBy(xpath= "//tbody//td[@id='lstServis_tccell0_2']")
+    public WebElement ServisKodu2Sec;
+
+    @FindBy(xpath= "//span[.='Kapat']")
+    public WebElement ServisKodu2SecKapat;
 
 
-    // Ameliyathane İşlemleri Oluşturma - Refik
 
-
-
-
-    // Doktor Ameliyathane İşlemleri - Bilal
-
-    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_2']")
-    public WebElement HastaSatirNo1;
 
     @FindBy(xpath = "//a[.='Ameliyat Ekle']")
     public WebElement AmeliyatEkle;
@@ -97,6 +103,18 @@ public class AmeliyathanePage {
 
     @FindBy(xpath = "//span[.='Kapat']")
     public WebElement Kapat;
+
+    // Ameliyathane İşlemleri Oluşturma - Refik
+
+
+
+
+    // Doktor Ameliyathane İşlemleri - Bilal
+
+    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_2']")
+    public WebElement HastaSatirNo1;
+
+
 
     @FindBy(xpath = "//a[.='Seans Başlat']")
     public WebElement SeansBaslat;

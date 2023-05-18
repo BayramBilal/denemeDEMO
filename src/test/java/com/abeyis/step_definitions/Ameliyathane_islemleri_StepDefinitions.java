@@ -9,6 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -29,7 +30,8 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @When("Enter service code and selects service")
     public void enter_service_code_and_selects_service() {
         ameliyathanePage.AmeliyatBirimKodu.click();
-        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
+//        ameliyathanePage.AmeliyatBirimKodu.clear();
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020", Keys.ENTER);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
@@ -73,10 +75,37 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneListe() {
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
+        loginPage.hastaislemleri.click();
+        loginPage.ameliyathaneIslemleri.click();
+        loginPage.ameliyathaneListesi.click();
+
+
     }
 
     @And("Selects date and service information")
     public void selectsDateAndServiceInformation() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatTarih.click();
+        ameliyathanePage.AmeliyatTarih.sendKeys("01.06.2023", Keys.ENTER);
+        BrowserUtils.waitFor(3);
+//        Actions actions = new Actions(Driver.getDriver());
+//        actions.doubleClick(ameliyathanePage.ServisKodu);
+
+        ameliyathanePage.ServisKodu.click();
+        ameliyathanePage.ServisKodu.clear();
+        ameliyathanePage.ServisKodu.sendKeys("1020", Keys.ENTER);
+        BrowserUtils.waitFor(2);
+        ameliyathanePage.ServisKodu2.sendKeys("1020", Keys.ENTER);
+
+        ameliyathanePage.ServisKodu2Sec.click();
+        ameliyathanePage.ServisKodu2SecKapat.click();
+
+
+
+
     }
 
     @And("Add Salon from Salon Islemleri")
@@ -119,6 +148,9 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void surgeryListIsCreatedAmeliyathaneBildirButtonDisappearsAndACheckmarkAppearsToTheRightOfTheSalonName() {
     }
 
+
+
+    //Bilal
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneIslemleri() {
     }
@@ -151,7 +183,11 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void sendThePatientToTheService() {
     }
 
+
+    //Timur
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme islemi")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneMalzemeIslemi() {
+
+
     }
 }
