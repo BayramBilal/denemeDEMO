@@ -85,7 +85,6 @@ public class AmeliyathanePage {
 
 
 
-
     @FindBy(xpath = "//a[.='Ameliyat Ekle']")
     public WebElement AmeliyatEkle;
 

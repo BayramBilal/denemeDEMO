@@ -20,17 +20,13 @@ public class US01_Login_StepDefinitions {
         loginPage.login();
     }
 
-    @When("the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri")
-    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsDr_Ameliyathane_islemleri() {
-
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
-        wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
 
 
 
 
 
 
-    }
+
+
 }
 

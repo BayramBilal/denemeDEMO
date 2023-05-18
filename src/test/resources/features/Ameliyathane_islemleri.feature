@@ -1,3 +1,4 @@
+@ameliyat
 Feature: Probel Ameliyathane İşlemleri
 
   Background:
@@ -14,7 +15,7 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-  @ameliyat
+
   Scenario: Ameliyat Listesi Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
@@ -55,4 +56,4 @@ Feature: Probel Ameliyathane İşlemleri
 
 
   Scenario: Ameliyathane Malzeme İşlemleri
-    When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane Malzeme
+    When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme

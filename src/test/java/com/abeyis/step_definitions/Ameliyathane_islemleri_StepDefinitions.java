@@ -150,10 +150,23 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
 
-    //Bilal
+
+
+
+
+
+    //Refik
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneIslemleri() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
+        loginPage.hastaislemleri.click();
+        loginPage.ameliyathaneIslemleri.click();
+        loginPage.ameliyathaneIslemleri.click();
+
     }
+
+
 
     @And("Approve the selected salon name")
     public void approveTheSelectedSalonName() {
@@ -167,8 +180,27 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void ameliyathaneyeIndirildiIsVisiable() {
     }
 
+
+    // Bilal
+
+    @When("the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri")
+    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsDr_Ameliyathane_islemleri() {
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
+
+        loginPage.hastaislemleri.click();
+        loginPage.ameliyathaneIslemleri.click();
+        loginPage.drAmeliyathaneIslemleri.click();
+
+
+    }
     @And("Selects the approved salon and see the patient")
     public void selectsTheApprovedSalonAndSeeThePatient() {
+
+
+
+
     }
 
     @And("Select the Seansı Baslat and click the Ameliyat Başlat")
@@ -185,9 +217,19 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
     //Timur
-    @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme islemi")
-    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneMalzemeIslemi() {
+    @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme")
+    public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneMalzeme() {
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
+        wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
+
+        loginPage.hastaislemleri.click();
+        loginPage.ameliyathaneIslemleri.click();
+        loginPage.ameliyathaneMalzemeIslem.click();
 
 
     }
+
+
+
 }
