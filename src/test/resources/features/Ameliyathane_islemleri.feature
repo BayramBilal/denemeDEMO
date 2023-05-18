@@ -57,3 +57,10 @@ Feature: Probel Ameliyathane İşlemleri
 
   Scenario: Ameliyathane Malzeme İşlemleri
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
+
+
+
+
+
+
+  Scenario: Ameliyathane Malzeme İşlemleri

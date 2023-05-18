@@ -84,6 +84,8 @@ public class LoginPage {
       sifre.sendKeys(ConfigurationReader.getProperty("SIFRE"));
       webSifre.sendKeys(ConfigurationReader.getProperty("WEB_SIFRE"));
       giris.click();
+
+
    }
 
 }

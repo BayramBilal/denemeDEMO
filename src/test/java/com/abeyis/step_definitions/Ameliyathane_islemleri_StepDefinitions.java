@@ -72,7 +72,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
     }
-
+//Zafer
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneListe() {
 
