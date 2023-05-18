@@ -138,7 +138,46 @@ public class AmeliyathanePage {
 
     // Ameliyathane Malzeme İşlemleri - Timur
 
-
+    @FindBy(xpath = "//a[@onclick='funcSablonUygula(this)']")
+    public WebElement linkAblonUygula;
+    @FindBy(xpath = "//a[@onclick='func_Malzemeleri_isle(this)']")
+    public WebElement linkNcelle;
+    @FindBy(xpath = "//a[@onclick='func_ilaclari_isle(this)']")
+    public WebElement linkLarNcelle;
+    @FindBy(xpath = "//a[@onclick='SablonTanimlamaAc()']")
+    public WebElement linkAblonTanMlamalar;
+    @FindBy(xpath = "/html/body/div[1]/div[4]/section/div[4]/div[2]/div[2]/div[2]/table/tbody/tr/td/div[2]/table/tbody/tr[2]/td[2]")
+    public WebElement tdCenter;
+    @FindBy(xpath = "//a[@data-lookupvalue='5']")
+    public WebElement linkVerify;
+    @FindBy(xpath = "//a[@data-lookupvalue='3']")
+    public WebElement linkVerify2;
+    @FindBy(xpath = "//a[@data-lookupvalue='1']")
+    public WebElement linkVerify3;
+    @FindBy(xpath = "//a[@data-lookupvalue='11']")
+    public WebElement linkVerify4;
+    @FindBy(xpath = "//label[@for='chk_tumunuSec']")
+    public WebElement labelCheckMargin;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1933']")
+    public WebElement labelCheckMargin2;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1934']")
+    public WebElement labelCheckMargin4;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1935']")
+    public WebElement labelCheckMargin3;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1941']")
+    public WebElement labelCheckMargin8;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1942']")
+    public WebElement labelCheckMargin5;
+    @FindBy(xpath = "//label[@for='cbIlacStokOnay_1943']")
+    public WebElement labelCheckMargin6;
+    @FindBy(xpath = "//span[@class='yes item']")
+    public WebElement spanEvet;
+    @FindBy(xpath = "//span[@class='warning item']")
+    public WebElement spanTamam;
+    @FindBy(xpath = "//span[@class='yes item']")
+    public WebElement spanEvet2;
+    @FindBy(xpath = "//span[@class='warning item']")
+    public WebElement spanTamam2;
 
 
 
