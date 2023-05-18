@@ -2,6 +2,7 @@ package com.abeyis.step_definitions;
 
 
 import com.abeyis.pages.LoginPage;
+import com.abeyis.utilities.BrowserUtils;
 import com.abeyis.utilities.ConfigurationReader;
 import com.abeyis.utilities.Driver;
 import io.cucumber.java.en.Given;
@@ -18,12 +19,11 @@ public class US01_Login_StepDefinitions {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         loginPage.login();
+        BrowserUtils.waitFor(4);
+        loginPage.BilgileriDegistir.click();
+        BrowserUtils.waitFor(3);
+        loginPage.Degistir.click();
     }
-
-
-
-
-
 
 
 
