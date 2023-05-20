@@ -74,7 +74,7 @@ public class AmeliyathanePage {
     @FindBy(id = "lstServis-SERVIS_KODU")
     public WebElement ServisKodu;
 
-    @FindBy(id = "lstServis_DXFREditorcol1")
+    @FindBy(id = "lstServis_DXFREditorcol1_I")
     public WebElement ServisKodu2;
 
     @FindBy(xpath= "//tbody//td[@id='lstServis_tccell0_2']")
@@ -83,14 +83,21 @@ public class AmeliyathanePage {
     @FindBy(xpath= "//span[.='Kapat']")
     public WebElement ServisKodu2SecKapat;
 
+    @FindBy(xpath= "//a[@class='text_btn text_btn_islem backWhite']")
+    public WebElement Salonİslemleri;
 
-
+    @FindBy(id = "HastaAmlSaat_501071678_849_I")
+    public WebElement AmeliyatSaat;
 
     @FindBy(xpath = "//a[.='Ameliyat Ekle']")
     public WebElement AmeliyatEkle;
 
-    @FindBy(id = "AmeliyatKod_TETKIK_ADI")
+    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[8]")
     public WebElement YapilacakAmeliyat;
+
+    @FindBy(xpath= "(//*[@class='LookupSelectButton text_btn text_btn_ok backWhite'])[1]")
+    public WebElement YapilacakAmeliyatSec;
+
 
     @FindBy(id = "OrganYon")
     public WebElement AmeliyatYon;
@@ -98,11 +105,62 @@ public class AmeliyathanePage {
     @FindBy(id = "KesiCombo")
     public WebElement KesBilgisi;
 
+    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[9]")
+    public WebElement DoktorSecUcNokta;
+
+    @FindBy(xpath = "//tbody//td[@id='sevkEdenDoktorList_tccell0_2']")
+    public WebElement DoktorSec;
+
+
     @FindBy(xpath = "//a[.='Kaydet']")
     public WebElement Kaydet;
 
     @FindBy(xpath = "//span[.='Kapat']")
     public WebElement Kapat;
+
+    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatEkibi_tcheader3']")//(//*[@class=text_btn backWhite])[1]
+    public WebElement AmeliyatEkibiEkle;
+    @FindBy(xpath = "//tbody//td[@id='AmeliyatDoktorListe_tccell0_2']") //*[@id=AmeliyatDoktorListe_tccell0_2]
+    public WebElement AmeliyatDoktorListe1;
+
+    @FindBy(xpath = "//tbody//td[@id='AmeliyatDoktorListe_tccell1_2']")  //*[@id=AmeliyatDoktorListe_tccell1_2]
+    public WebElement AmeliyatDoktorListe2;
+
+
+    @FindBy(xpath = "//tbody//td[@id='AmeliyatDoktorListe_tcheader2']")
+    public WebElement AmeliyatDoktorListeSecKapat;
+
+    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatEkibi_tccell0_2']")//tbody//td//input[@id='cbEkipSorumlu_682']
+    public WebElement AmeliyatDoktorSorumluSec;
+
+    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatEkibiAnestezi_tcheader3']")
+    public WebElement AnestesiAmeliyatEkibiEkle;
+
+    @FindBy(xpath = "//tbody//td[@id='AmeliyatDoktorListe_tccell0_2']")
+    public WebElement AnestesiAmeliyatEkibiListe1;
+
+    @FindBy(xpath = "//tbody//td[@id='AmeliyatDoktorListe_tccell1_2']")
+    public WebElement AnestesiAmeliyatEkibiListe2;
+
+    @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatEkibiAnestezi_tccell0_2']")//(//tbody//td[@class='dxgv dx-ac'])[4]
+    public WebElement AnestesiDoktorSorumluSec;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // Ameliyathane İşlemleri Oluşturma - Refik
 
