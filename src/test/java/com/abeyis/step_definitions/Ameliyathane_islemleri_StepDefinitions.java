@@ -95,7 +95,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void selectsDateAndServiceInformation() {
         BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatTarih.click();
-        ameliyathanePage.AmeliyatTarih.sendKeys("21.07.2023", Keys.ENTER);
+        ameliyathanePage.AmeliyatTarih.sendKeys("22.07.2023", Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.ServisKodu.click();
         ameliyathanePage.ServisKodu.clear();

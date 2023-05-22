@@ -15,12 +15,12 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
-
+  @zafer
   Scenario: Ameliyat Listesi Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
-  #  And Add Salon from Salon Islemleri
-  #  And Select the patient to be operated
+    And Add Salon from Salon Islemleri
+    And Select the patient to be operated
     And Set the operation time
     And Add operation at Hastaya Yapilacak Ameliyatlar
     And Select Surgical Surgery Team at
