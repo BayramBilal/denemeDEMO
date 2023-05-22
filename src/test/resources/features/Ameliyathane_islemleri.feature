@@ -58,7 +58,18 @@ Feature: Probel Ameliyathane İşlemleri
 
   Scenario: Ameliyathane Malzeme İşlemleri (Salon onayı sonrası hasta buraya gelir)
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
-
+    And The user Selects date and service information
+    And The user clicks one of the patient from the patient raw
+    And The user clicks Sablon Uygula Button
+    And The user selects one of the option from the Sablon Menu
+    And The user clicks Tumunu Sec button from the Malzeme Ekle Menu
+    And The user selects necessary options from the Ilac Ekle Menu
+    And The user selects Malzeme Isle & Güncelle Button
+    And The user selects Evet from the pop Up menu
+    And The user selects Tamam from the pop Up menu
+    And The user selects Ilacları Isle & Güncelle Button
+    And The user selects Evet from the pop Up menu
+    And The user selects Tamam from the pop Up menu
 
 
 

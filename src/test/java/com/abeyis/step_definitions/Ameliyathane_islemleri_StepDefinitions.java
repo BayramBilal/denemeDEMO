@@ -107,10 +107,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         //  BrowserUtils.waitFor(3);
         //  ameliyathanePage.ServisKodu2Sec.click();
         //  ameliyathanePage.ServisKodu2SecKapat.click();
-
-
     }
-
     @And("Add Salon from Salon Islemleri")
     public void addSalonFromSalonIslemleri() {
         BrowserUtils.waitFor(3);
@@ -118,16 +115,12 @@ public class Ameliyathane_islemleri_StepDefinitions {
         BrowserUtils.jsclick(ameliyathanePage.SalonEkle);
         BrowserUtils.waitFor(3);
         BrowserUtils.jsclick(ameliyathanePage.SalonEkledenSec);
-
     }
-
     @And("Select the patient to be operated")
     public void selectThePatientToBeOperated() {
         BrowserUtils.waitFor(3);
         BrowserUtils.doubleClick(ameliyathanePage.Hastasec);
-
     }
-
     @And("Set the operation time")
     public void setTheOperationTime() {
         BrowserUtils.waitFor(3);
@@ -136,7 +129,6 @@ public class Ameliyathane_islemleri_StepDefinitions {
                 sendKeys(Keys.chord(Keys.CONTROL, "a"),
                         Keys.DELETE, saat.format(DateTimeFormatter.ofPattern("12:40:")));
     }
-
     @And("Add operation at Hastaya Yapilacak Ameliyatlar")
     public void addOperationAtHastayaYapilacakAmeliyatlar() {
         BrowserUtils.waitFor(3);
@@ -150,7 +142,6 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.DoktorSec.click();
         ameliyathanePage.Kaydet.click();
     }
-
     @And("Select Surgical Surgery Team at")
     public void selectSurgicalSurgeryTeamAt() {
         BrowserUtils.waitFor(3);
@@ -161,13 +152,12 @@ public class Ameliyathane_islemleri_StepDefinitions {
         BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorListe2);
         ameliyathanePage.AmeliyatDoktorListeSecKapat.click();
     }
-
     @And("Select the person responsible for the Surgical Surgery Team")
     public void selectThePersonResponsibleForTheSurgicalSurgeryTeam() {
         BrowserUtils.waitFor(3);
         BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorSorumluSec);
-    }
 
+    }
     @And("Select Anesthesia Surgery Team")
     public void selectAnesthesiaSurgeryTeam() {
         BrowserUtils.waitFor(2);
@@ -176,25 +166,21 @@ public class Ameliyathane_islemleri_StepDefinitions {
         BrowserUtils.jsclick(ameliyathanePage.AnestesiAmeliyatEkibiListe1);
         BrowserUtils.jsclick(ameliyathanePage.AnestesiAmeliyatEkibiListe2);
         BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorListeSecKapat);
-            }
-
+    }
     @And("Select the person responsible for the Anesthesia Surgery Team")
     public void selectThePersonResponsibleForTheAnesthesiaSurgeryTeam() {
         BrowserUtils.waitFor(2);
         BrowserUtils.jsclick(ameliyathanePage.AnestesiDoktorSorumluSec);
-    }
 
+    }
     @And("Report operating room by clicking Ameliyathane Bildir")
     public void reportOperatingRoomByClickingAmeliyathaneBildir() {
 
     }
-
     @Then("Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name")
     public void surgeryListIsCreatedAmeliyathaneBildirButtonDisappearsAndACheckmarkAppearsToTheRightOfTheSalonName() {
 
-
     }
-
 
 
 
@@ -274,9 +260,46 @@ public class Ameliyathane_islemleri_StepDefinitions {
         loginPage.ameliyathaneIslemleri.click();
         loginPage.ameliyathaneMalzemeIslem.click();
 
+    }
+
+    @And("The user Selects date and service information")
+    public void theUserSelectsDateAndServiceInformation() {
 
     }
 
+    @And("The user clicks one of the patient from the patient raw")
+    public void theUserClicksOneOfThePatientFromThePatientRaw() {
+    }
 
+    @And("The user clicks Sablon Uygula Button")
+    public void theUserClicksSablonUygulaButton() {
+    }
 
+    @And("The user selects one of the option from the Sablon Menu")
+    public void theUserSelectsOneOfTheOptionFromTheSablonMenu() {
+    }
+
+    @And("The user clicks Tumunu Sec button from the Malzeme Ekle Menu")
+    public void theUserClicksTumunuSecButtonFromTheMalzemeEkleMenu() {
+    }
+
+    @And("The user selects necessary options from the Ilac Ekle Menu")
+    public void theUserSelectsNecessaryOptionsFromTheIlacEkleMenu() {
+    }
+
+    @And("The user selects Malzeme Isle & Güncelle Button")
+    public void theUserSelectsMalzemeIsleGüncelleButton() {
+    }
+
+    @And("The user selects Evet from the pop Up menu")
+    public void theUserSelectsEvetFromThePopUpMenu() {
+    }
+
+    @And("The user selects Tamam from the pop Up menu")
+    public void theUserSelectsTamamFromThePopUpMenu() {
+    }
+
+    @And("The user selects Ilacları Isle & Güncelle Button")
+    public void theUserSelectsIlaclarıIsleGüncelleButton() {
+    }
 }
