@@ -11,12 +11,18 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Ameliyathane_islemleri_StepDefinitions {
 
     AmeliyathanePage ameliyathanePage = new AmeliyathanePage();
     LoginPage loginPage = new LoginPage();
+
+    Actions actions=new Actions(Driver.getDriver());
 
 
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
@@ -30,7 +36,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @When("Enter service code and selects service")
     public void enter_service_code_and_selects_service() {
         ameliyathanePage.AmeliyatBirimKodu.click();
-//        ameliyathanePage.AmeliyatBirimKodu.clear();
+       //ameliyathanePage.AmeliyatBirimKodu.clear();
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020", Keys.ENTER);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
@@ -89,63 +95,104 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void selectsDateAndServiceInformation() {
         BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatTarih.click();
-        ameliyathanePage.AmeliyatTarih.sendKeys("01.06.2023", Keys.ENTER);
+        ameliyathanePage.AmeliyatTarih.sendKeys("21.07.2023", Keys.ENTER);
         BrowserUtils.waitFor(3);
-//        Actions actions = new Actions(Driver.getDriver());
-//        actions.doubleClick(ameliyathanePage.ServisKodu);
-
         ameliyathanePage.ServisKodu.click();
         ameliyathanePage.ServisKodu.clear();
+        BrowserUtils.waitFor(3);
         ameliyathanePage.ServisKodu.sendKeys("1020", Keys.ENTER);
-        BrowserUtils.waitFor(2);
-        ameliyathanePage.ServisKodu2.sendKeys("1020", Keys.ENTER);
-
-        ameliyathanePage.ServisKodu2Sec.click();
-        ameliyathanePage.ServisKodu2SecKapat.click();
-
-
+        // BrowserUtils.doubleClick(ameliyathanePage.ServisKodu);
+        //  ameliyathanePage.ServisKodu2.click();
+        //  ameliyathanePage.ServisKodu2.sendKeys("1020",Keys.ENTER);
+        //  BrowserUtils.waitFor(3);
+        //  ameliyathanePage.ServisKodu2Sec.click();
+        //  ameliyathanePage.ServisKodu2SecKapat.click();
 
 
     }
 
     @And("Add Salon from Salon Islemleri")
     public void addSalonFromSalonIslemleri() {
+        BrowserUtils.waitFor(3);
+        BrowserUtils.jsclick(ameliyathanePage.Salonİslemleri);
+        BrowserUtils.jsclick(ameliyathanePage.SalonEkle);
+        BrowserUtils.waitFor(3);
+        BrowserUtils.jsclick(ameliyathanePage.SalonEkledenSec);
+
     }
 
     @And("Select the patient to be operated")
     public void selectThePatientToBeOperated() {
+        BrowserUtils.waitFor(3);
+        BrowserUtils.doubleClick(ameliyathanePage.Hastasec);
+
     }
 
     @And("Set the operation time")
     public void setTheOperationTime() {
+        BrowserUtils.waitFor(3);
+        LocalTime saat = LocalTime.now();
+        ameliyathanePage.AmeliyatSaat.
+                sendKeys(Keys.chord(Keys.CONTROL, "a"),
+                        Keys.DELETE, saat.format(DateTimeFormatter.ofPattern("12:40:")));
     }
 
     @And("Add operation at Hastaya Yapilacak Ameliyatlar")
     public void addOperationAtHastayaYapilacakAmeliyatlar() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatEkle.click();
+        ameliyathanePage.YapilacakAmeliyat.click();
+        ameliyathanePage.YapilacakAmeliyatSec.click();
+        ameliyathanePage.KesBilgisi.click();
+        ameliyathanePage.KesBilgisi.sendKeys("1");
+        BrowserUtils.waitFor(2);
+        ameliyathanePage.DoktorSecUcNokta.click();
+        ameliyathanePage.DoktorSec.click();
+        ameliyathanePage.Kaydet.click();
     }
 
     @And("Select Surgical Surgery Team at")
     public void selectSurgicalSurgeryTeamAt() {
+        BrowserUtils.waitFor(3);
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        BrowserUtils.waitFor(3);
+        BrowserUtils.jsclick(ameliyathanePage.AmeliyatEkibiEkle);
+        BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorListe1);
+        BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorListe2);
+        ameliyathanePage.AmeliyatDoktorListeSecKapat.click();
     }
 
     @And("Select the person responsible for the Surgical Surgery Team")
     public void selectThePersonResponsibleForTheSurgicalSurgeryTeam() {
+        BrowserUtils.waitFor(3);
+        BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorSorumluSec);
     }
 
     @And("Select Anesthesia Surgery Team")
     public void selectAnesthesiaSurgeryTeam() {
-    }
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.AnestesiAmeliyatEkibiEkle);
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.AnestesiAmeliyatEkibiListe1);
+        BrowserUtils.jsclick(ameliyathanePage.AnestesiAmeliyatEkibiListe2);
+        BrowserUtils.jsclick(ameliyathanePage.AmeliyatDoktorListeSecKapat);
+            }
 
     @And("Select the person responsible for the Anesthesia Surgery Team")
     public void selectThePersonResponsibleForTheAnesthesiaSurgeryTeam() {
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.AnestesiDoktorSorumluSec);
     }
 
     @And("Report operating room by clicking Ameliyathane Bildir")
     public void reportOperatingRoomByClickingAmeliyathaneBildir() {
+
     }
 
     @Then("Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name")
     public void surgeryListIsCreatedAmeliyathaneBildirButtonDisappearsAndACheckmarkAppearsToTheRightOfTheSalonName() {
+
+
     }
 
 

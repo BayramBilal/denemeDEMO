@@ -1,5 +1,6 @@
 package com.abeyis.utilities;
 
+import org.apache.commons.io.FileUtils;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +9,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -472,6 +477,58 @@ for given duration
      */
     public static void waitForPresenceOfElement(By by, long time) {
         new WebDriverWait(Driver.getDriver(), time).until(ExpectedConditions.presenceOfElementLocated(by));
+    }
+    public static String getScreenshot(String name) throws IOException {
+        // naming the screenshot with the current date to avoid duplication
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        // TakesScreenshot is an interface of selenium that takes the screenshot
+        TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+        File source = ts.getScreenshotAs(OutputType.FILE);
+        // full path to the screenshot location
+        String target = System.getProperty("user.dir") + "/target/Screenshots/" + name + date + ".png";
+        File finalDestination = new File(target);
+        // save the screenshot to the path given
+        FileUtils.copyFile(source, finalDestination);
+        return target;
+    }
+    //========ScreenShot Web Element(Bir webelementin resmini alma)=====//
+    public static String getScreenshotWebElement(String name,WebElement element) throws IOException {
+        String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
+        // TakesScreenshot is an interface of selenium that takes the screenshot
+        File source = element.getScreenshotAs(OutputType.FILE);
+        // full path to the screenshot location
+        String wElementSS = System.getProperty("user.dir") + "/target/WElementScreenshots/" + name + date + ".png";
+        File finalDestination = new File(wElementSS);
+        // save the screenshot to the path given
+        FileUtils.copyFile(source, finalDestination);
+        return  wElementSS;
+    }
+
+    public static void jsScrollClick(WebElement webElement) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+            js.executeScript("arguments[0].click()", webElement);
+            waitFor(1);
+        }
+    }
+    public static void jsScroll(WebElement webElement) {
+
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true);", webElement);
+    }
+    //====== js ======//
+    public static void jsclick(WebElement webElement){
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();", webElement);
+        try {
+            webElement.click();
+        } catch (Exception e) {
+            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+            executor.executeScript("arguments[0].click();", webElement);
+        }
     }
 
 
