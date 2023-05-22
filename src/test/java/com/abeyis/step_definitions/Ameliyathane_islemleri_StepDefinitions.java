@@ -189,29 +189,71 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
     //Refik
+
+
+
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneIslemleri() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
         loginPage.hastaislemleri.click();
         loginPage.ameliyathaneIslemleri.click();
-        loginPage.ameliyathaneIslemleri.click();
+        loginPage.ameliyathaneIslem.click();
 
     }
 
+    @And("user selects surgery department in order to approve")
+    public void userSelectsSurgeryDepartmentInOrderToApprove() {
+        ameliyathanePage.KBBMasasi.click();
+
+    }
+
+    @And("user taps on the Salon Islemleri")
+    public void userTapsOnTheSalonIslemleri() {
+        ameliyathanePage.salonIslemleriOnayi();
+    }
 
 
     @And("Approve the selected salon name")
     public void approveTheSelectedSalonName() {
+        ameliyathanePage.salonOnayla();
+
+    }
+
+    @And("User selects patient from protocol number 501069666")
+    public void userSelectsPatientFromProtocolNumber() {
+
+        ameliyathanePage.selectedPatient.click();
+        BrowserUtils.waitFor(2);
+
     }
 
     @And("Patient is sent to the surgery hall")
     public void patientIsSentToTheSurgeryHall() {
+        BrowserUtils.waitForClickablility(ameliyathanePage.linkHastaGiriYap, 10);
+        ameliyathanePage.linkHastaGiriYap.click();
     }
 
-    @Then("Ameliyathaneye indirildi is visiable")
-    public void ameliyathaneyeIndirildiIsVisiable() {
+    @And("Clicks pop-up message")
+    public void clicksPopUpMessage() {
+        ameliyathanePage.popUpMessage.click();
     }
+
+    @Then("Ameliyathaneye indirildi is visible")
+    public void ameliyathaneyeIndirildiIsVisible() {
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(ameliyathanePage.hastaDurumuAcıklaması.getText().contains("Ameliyathaneye İndirildi"));
+    }
+
+
+
+
+
+
+
+
+
+
 
 
     // Bilal
@@ -228,78 +270,125 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
     }
-    @And("Selects the approved salon and see the patient")
-    public void selectsTheApprovedSalonAndSeeThePatient() {
+    @And("Selects the approved salon and click sec button")
+    public void selectsTheApprovedSalonAndClickSecButton() {
+
+        ameliyathanePage.SalonKBB.click();
+        ameliyathanePage.SalonSec.click();
+
 
     }
 
-    @And("Click the Seansı Baslat button and see the info of patient as Anestezi Başladı")
-    public void clickTheSeansıBaslatButtonAndSeeTheInfoOfPatientAsAnesteziBaşladı() {
+    @And("Enters the operation date and click Yenile button,")
+    public void entersTheOperationDateAndClickYenileButton() {
+
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatTarih.click();
+        ameliyathanePage.AmeliyatTarih.sendKeys("22.07.2023", Keys.ENTER);
+
+
     }
 
-    @And("Click the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı")
-    public void clickTheSaatlerButtonEnterTheTimeAndSeeTheInfoOfPatientAsSalonaGirişYaptı() {
-    }
-    @And("Click the Seansı Bitir button and finish the surgery")
-    public void clickTheSeansıBitirButtonAndFinishTheSurgery() {
+    @And("Selects the patient and clicks the Seansı Baslat button, see the info of patient as Anestezi Başladı")
+    public void selectsThePatientAndClicksTheSeansıBaslatButtonSeeTheInfoOfPatientAsAnesteziBaşladı() {
+
+        ameliyathanePage.SeansBaslat.click();
+        ameliyathanePage.SeansBaslatOnay.click();
+
+        //see the anestezi başladı message
+
+
     }
 
-    @Then("Send the patient to the service using POSTOP button")
-    public void sendThePatientToTheServiceUsingPOSTOPButton() {
+    @And("Clicks the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı")
+    public void clicksTheSaatlerButtonEnterTheTimeAndSeeTheInfoOfPatientAsSalonaGirişYaptı() {
+
+        ameliyathanePage.Saatler.click();
+        ameliyathanePage.AnesteziBitir.click();
+
+        // see the salona giriş yaptı message
+
     }
+
+    @And("Clicks the Seansı Bitir button and finish the surgery")
+    public void clicksTheSeansıBitirButtonAndFinishTheSurgery() {
+        ameliyathanePage.SeansBitir.click();
+        ameliyathanePage.SeansBitirOnay.click();
+    }
+
+    @And("Sends the patient to the service by using Hasta Servise Döndü button")
+    public void sendsThePatientToTheServiceByUsingHastaServiseDöndüButton() {
+
+
+    }
+
+    @Then("See the patient as Servise Gönderildi by using POSTOP button")
+    public void seeThePatientAsServiseGönderildiByUsingPOSTOPButton() {
+
+
+    }
+
+
+
 
 
     //Timur
     @When("the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme")
     public void theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneMalzeme() {
-
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
-
         loginPage.hastaislemleri.click();
         loginPage.ameliyathaneIslemleri.click();
         loginPage.ameliyathaneMalzemeIslem.click();
-
     }
-
     @And("The user Selects date and service information")
     public void theUserSelectsDateAndServiceInformation() {
-
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatTarih.click();
+        ameliyathanePage.AmeliyatTarih.sendKeys("01.06.2023", Keys.ENTER);
     }
-
     @And("The user clicks one of the patient from the patient raw")
     public void theUserClicksOneOfThePatientFromThePatientRaw() {
+        ameliyathanePage.ameliyatHastaSec1.click();
     }
-
     @And("The user clicks Sablon Uygula Button")
     public void theUserClicksSablonUygulaButton() {
+        ameliyathanePage.sablonUygula.click();
     }
-
     @And("The user selects one of the option from the Sablon Menu")
     public void theUserSelectsOneOfTheOptionFromTheSablonMenu() {
+        ameliyathanePage.sablon1Sec.click();
     }
-
     @And("The user clicks Tumunu Sec button from the Malzeme Ekle Menu")
     public void theUserClicksTumunuSecButtonFromTheMalzemeEkleMenu() {
+//        ameliyathanePage.sablonTumunuSec.click();
+//   BrowserUtils.clickWithJS(ameliyathanePage.sablonTumunuSec);
+        ameliyathanePage.malzemeOnay1.click();
+        ameliyathanePage.malzemeOnay2.click();
+//    ameliyathanePage.malzemeOnay3.click();
+//    ameliyathanePage.malzemeOnay4.click();
     }
-
     @And("The user selects necessary options from the Ilac Ekle Menu")
     public void theUserSelectsNecessaryOptionsFromTheIlacEkleMenu() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.ilacOnay1.click();
+        ameliyathanePage.ilacOnay2.click();
     }
-
-    @And("The user selects Malzeme Isle & Güncelle Button")
-    public void theUserSelectsMalzemeIsleGüncelleButton() {
+    @And("The user selects Malzeme Isle & Guncelle Button")
+    public void theUserSelectsMalzemeIsleGuncelleButton() {
+        ameliyathanePage.malzemeIsleGuncelle.click();
     }
-
     @And("The user selects Evet from the pop Up menu")
     public void theUserSelectsEvetFromThePopUpMenu() {
+        ameliyathanePage.malzemeIsleOnayTamam.click();
     }
-
     @And("The user selects Tamam from the pop Up menu")
     public void theUserSelectsTamamFromThePopUpMenu() {
+        ameliyathanePage.malzemeIsleUyariOnayTamam.click();
+    }
+    @And("The user selects Ilaclari Isle & Guncelle Button")
+    public void theUserSelectsIlaclariIsleGuncelleButton() {
+        ameliyathanePage.ilacIsleGuncelle.click();
     }
 
-    @And("The user selects Ilacları Isle & Güncelle Button")
-    public void theUserSelectsIlaclarıIsleGüncelleButton() {
-    }
 }

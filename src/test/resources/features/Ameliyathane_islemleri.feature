@@ -35,39 +35,46 @@ Feature: Probel Ameliyathane İşlemleri
 
 
 
+  @ameliyatRefik
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
+    ##And user selects surgery department in order to approve
+    And user taps on the Salon Islemleri
     And Approve the selected salon name
+    And User selects patient from protocol number 501069666
     And Patient is sent to the surgery hall
-    Then Ameliyathaneye indirildi is visiable
+    And Clicks pop-up message
+    Then Ameliyathaneye indirildi is visible
 
 
 
 
   Scenario: Doktor Ameliyathane İşlemleri (Salon onayı sonrası)
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
-    And Selects the approved salon and see the patient
-    And Click the Seansı Baslat button and see the info of patient as Anestezi Başladı
-    And Click the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı
-    And Click the Seansı Bitir button and finish the surgery
-    Then Send the patient to the service using POSTOP button
+    And Selects the approved salon and click sec button
+    And Enters the operation date and click Yenile button,
+    And Selects the patient and clicks the Seansı Baslat button, see the info of patient as Anestezi Başladı
+    And Clicks the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı
+    And Clicks the Seansı Bitir button and finish the surgery
+    And Sends the patient to the service by using Hasta Servise Döndü button
+    Then See the patient as Servise Gönderildi by using POSTOP button
 
 
 
 
-
+  @TimurGuclu
   Scenario: Ameliyathane Malzeme İşlemleri (Salon onayı sonrası hasta buraya gelir)
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
     And The user Selects date and service information
     And The user clicks one of the patient from the patient raw
     And The user clicks Sablon Uygula Button
     And The user selects one of the option from the Sablon Menu
-    And The user clicks Tumunu Sec button from the Malzeme Ekle Menu
     And The user selects necessary options from the Ilac Ekle Menu
-    And The user selects Malzeme Isle & Güncelle Button
+    And The user clicks Tumunu Sec button from the Malzeme Ekle Menu
+    And The user selects Malzeme Isle & Guncelle Button
     And The user selects Evet from the pop Up menu
     And The user selects Tamam from the pop Up menu
-    And The user selects Ilacları Isle & Güncelle Button
+    And The user selects Ilaclari Isle & Guncelle Button
     And The user selects Evet from the pop Up menu
     And The user selects Tamam from the pop Up menu
 
