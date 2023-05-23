@@ -3,6 +3,7 @@ package com.abeyis.pages;
 import com.abeyis.utilities.BrowserUtils;
 import com.abeyis.utilities.Driver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -87,9 +88,15 @@ public class AmeliyathanePage {
     public WebElement SalonEkle;
     @FindBy(xpath= "//a[.='Seç']")//tbody//td[@id='lstSalonMasaListesi_tccell0_4']  (//*[contains(text(),'Seç')])[9]
     public WebElement SalonEkledenSec;
+    @FindBy(xpath= "//*[@class='amlButton font14 selected']")
+    public WebElement Kbb;
+    @FindBy(xpath= "//a[.='Salonu İptal Et']")//a[@onclick='lstBtnSalonEkle(this)']
+    public WebElement SalonIptal;
+    @FindBy(xpath= "//span[.='Evet']")//tbody//td[@id='lstSalonMasaListesi_tccell0_4']  (//*[contains(text(),'Seç')])[9]
+    public WebElement Evet;
     @FindBy(xpath= "//tbody//tr[@id='dxGridHastaListe_DXDataRow0']")
     public WebElement Hastasec;
-    @FindBy(id = "HastaAmlSaat_501071678_849_I")
+    @FindBy(xpath ="//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_7']" ) // "HastaAmlSaat_501071678_849_I"
     public WebElement AmeliyatSaat;
     @FindBy(xpath = "//a[.='Ameliyat Ekle']")
     public WebElement AmeliyatEkle;
@@ -129,8 +136,9 @@ public class AmeliyathanePage {
     public WebElement AnestesiDoktorSorumluSec;
     @FindBy(xpath = "//*[contains(text(),'Ameliyathane Bildir')]")
     public WebElement AmeliyathaneBildir;
+    @FindBy(xpath = "//*[@class='hem_right hem_okey']")
+    public WebElement TıkButonu;
 
-    // Ameliyathane İşlemleri Oluşturma - Refik
     // Ameliyathane İşlemleri Oluşturma - Refik
 
     //menü butonu
@@ -189,14 +197,36 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_2']")
     public WebElement HastaSatirNo1;
 
-    @FindBy(xpath = "//table[@id='MEVCUT_SALON_LISTESI_DXMainTable']//td[.='KBB']")
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement KayitKapat;
+
+    @FindBy(id = "salonAc")
+    public WebElement SalonAc;
+
+
+    @FindBy(xpath = "//tbody//tr[@id='MEVCUT_SALON_LISTESI_DXDataRow1']")
     public WebElement SalonKBB;
 
-    @FindBy(xpath = "//table[@id='MEVCUT_SALON_LISTESI_DXMainTable']//td[@id='MEVCUT_SALON_LISTESI_tccell1_5']")
+    @FindBy(id = "MEVCUT_SALON_LISTESI_DXFREditorcol0_I")
+    public WebElement Masa;
+
+
+//    @FindBy(xpath = "//table[@id='MEVCUT_SALON_LISTESI_DXMainTable']//td[@id='MEVCUT_SALON_LISTESI_tccell1_5']")
+    @FindBy(id = "MEVCUT_SALON_LISTESI_tccell0_5")
     public WebElement SalonSec;
 
-    @FindBy(id = "[id='dxGridAmeliyatHastaListesi_tccell0_3']")
+//    @FindBy(xpath = "//tbody//tr[@id='dxGridAmeliyatHastaListesi_DXDataRow0']")
+    @FindBy(id = "dxGridAmeliyatHastaListesi_DXDataRow0")
     public WebElement HastaSec;
+
+    @FindBy(id = "btnLstYenile")
+    public WebElement Yenile;
+
+    @FindBy(xpath = "//button[.='Hasta Servise Döndü']")
+    public WebElement HastaServise;
+
+    @FindBy(xpath = "//span[.='Evet']")
+    public WebElement HastaServiseOnay;
 
     @FindBy(xpath = "//a[.='Seans Başlat']")
     public WebElement SeansBaslat;
@@ -207,7 +237,6 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//span[.='Hayır']")
     public WebElement SeansBaslatIptal;
 
-
     @FindBy(xpath = "//a[.='Seans Bitir']")
     public WebElement SeansBitir;
 
@@ -217,23 +246,18 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//span[.='Hayır']")
     public WebElement SeansBitirIptal;
 
-    @FindBy(xpath = "//a[@onclick='funcSeansBaslat(this)']")
-    public WebElement SeansBasLat;
+    @FindBy(xpath = "//a[@onclick='funcPostopGoster(this)']")
+    public WebElement Postop;
 
-    @FindBy(xpath = "//a[@onclick='funcSeansBaslat(this)']")
-    public WebElement linkSeansIptal;
+    @FindBy(id = "POSTOP_TARIH")
+    public WebElement PostopTarih;
 
-    @FindBy(xpath = "//label[@for='cbHastaMd_837']")
-    public WebElement labelCheckMarginIlksatir;
 
-    @FindBy(xpath = "//a[.='Anestezi Başlat']")
-    public WebElement AnesteziBasLat;
 
-    @FindBy(xpath = "//a[.='Anestezi Bitir']")
-    public WebElement AnesteziBitir;
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement PostopKapat;
 
-    @FindBy(xpath = "//a[.='Saatler']")
-    public WebElement Saatler;
+
 
  
 
@@ -290,8 +314,6 @@ public class AmeliyathanePage {
     public WebElement spanEvet2;
     @FindBy(xpath = "//span[@class='warning item']")
     public WebElement spanTamam2;
-
-
 
 
 

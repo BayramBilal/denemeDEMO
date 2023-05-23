@@ -14,7 +14,6 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-
   @zafer
   Scenario: Ameliyat Listesi Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
@@ -31,38 +30,19 @@ Feature: Probel Ameliyathane İşlemleri
     Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
-
-
-
-
   @ameliyatRefik
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     ##And user selects surgery department in order to approve
     And user taps on the Salon Islemleri
     And Approve the selected salon name
-    And User selects patient from protocol number 501069666
+    ##And User selects patient from protocol number 501069666
     And Patient is sent to the surgery hall
     And Clicks pop-up message
     Then Ameliyathaneye indirildi is visible
 
 
-
-
-  Scenario: Doktor Ameliyathane İşlemleri (Salon onayı sonrası)
-    When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
-    And Selects the approved salon and click sec button
-    And Enters the operation date and click Yenile button,
-    And Selects the patient and clicks the Seansı Baslat button, see the info of patient as Anestezi Başladı
-    And Clicks the Saatler button, enter the time and see the info of patient as Salona Giriş Yaptı
-    And Clicks the Seansı Bitir button and finish the surgery
-    And Sends the patient to the service by using Hasta Servise Döndü button
-    Then See the patient as Servise Gönderildi by using POSTOP button
-
-
-
-
-  @TimurGuclu
+  @Timur
   Scenario: Ameliyathane Malzeme İşlemleri (Salon onayı sonrası hasta buraya gelir)
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
     And The user Selects date and service information
@@ -79,7 +59,14 @@ Feature: Probel Ameliyathane İşlemleri
     And The user selects Tamam from the pop Up menu
 
 
-
+  @Dr
+  Scenario: Doktor Ameliyathane İşlemleri (Salon onayı sonrası)
+    When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
+    And Enters the operation date and click Yenile button
+    And Selects the approved salon and click sec button
+    And Selects the patient and clicks the Seansı Baslat button, see the info of patient as Anestezi Başladı
+    And Clicks the Seansı Bitir button and finish the surgery
+    Then See the patient as Servise Gönderildi by using POSTOP button
 
 
   Scenario: Ameliyat Bilgi Giriş İşlemleri
