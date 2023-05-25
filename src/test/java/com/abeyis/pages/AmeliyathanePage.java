@@ -17,8 +17,23 @@ public class AmeliyathanePage {
 
     }
 
+
     // Ameliyat Randevu Oluşturma - Veli
 
+
+    @FindBy(id = "RANDEVU_TARIHI")
+    public WebElement tarihRandevu;
+
+    @FindBy(id = "TXT_TARIH")
+    public WebElement RandevuTarihSon;
+
+    @FindBy(id = "btnAmeliyatRandevuListele")
+    public WebElement RandevuTarihYenile;
+
+
+
+    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_DXDataRow0\"]/td[2]")
+    public WebElement randevuTeyit;
     @FindBy(xpath = "//*[@id=\"BIRIM_KODU_ANA\"]")
     public WebElement AmeliyatBirimKodu;
     @FindBy(xpath = "//*[@id=\"divAmeliyatRandevu\"]/div[1]/a[2]")

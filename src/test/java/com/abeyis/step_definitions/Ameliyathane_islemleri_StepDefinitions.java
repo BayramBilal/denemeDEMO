@@ -41,6 +41,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void enter_service_code_and_selects_service() {
         ameliyathanePage.AmeliyatBirimKodu.click();
         //ameliyathanePage.AmeliyatBirimKodu.clear();
+        BrowserUtils.waitFor(5);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
@@ -64,10 +65,12 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void enters_the_ameliyat_randevu_date_time_and_save() {
         ameliyathanePage.ameliyatAdiListe.click();
         ameliyathanePage.abdominoplastiSec.click();
-        ameliyathanePage.randevuTarihi2.click();
-        ameliyathanePage.selectMonth.click();
-        ameliyathanePage.optionHaziran.click();
-        ameliyathanePage.haziranBir.click();
+        ameliyathanePage.tarihRandevu.click();
+        ameliyathanePage.tarihRandevu.sendKeys("05.06.2023", Keys.ENTER);
+//        ameliyathanePage.randevuTarihi2.click();
+//        ameliyathanePage.selectMonth.click();
+//        ameliyathanePage.optionHaziran.click();
+//        ameliyathanePage.haziranBir.click();
         ameliyathanePage.saatSec.click();
         ameliyathanePage.saatOnBir.click();
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
@@ -78,14 +81,21 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @Then("Randevu Verildi text is seen")
     public void randevu_verildi_text_is_seen() {
-        ameliyathanePage.inputTarihAna.click();
-        ameliyathanePage.selectMonthAna.click();
-        ameliyathanePage.optionHaziranAna.click();
-        ameliyathanePage.haziranBirAna.click();
-        BrowserUtils.waitFor(2);
-        actualResult = ameliyathanePage.randevuVerildiText.getText();
-        Assert.assertEquals(expectedResult, actualResult);
-        System.out.println("actualResult = " + actualResult);
+//        ameliyathanePage.inputTarihAna.click();
+//        ameliyathanePage.selectMonthAna.click();
+//        ameliyathanePage.optionHaziranAna.click();
+//        ameliyathanePage.haziranBirAna.click();
+//        BrowserUtils.waitFor(2);
+//        actualResult = ameliyathanePage.randevuVerildiText.getText();
+//        Assert.assertEquals(expectedResult, actualResult);
+//        System.out.println("actualResult = " + actualResult);
+        ameliyathanePage.RandevuTarihSon.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihSon.sendKeys("05.06.2023", Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihYenile.click();
+        BrowserUtils.waitForVisibility(ameliyathanePage.randevuTeyit, 10);
+        Assert.assertTrue(ameliyathanePage.randevuTeyit.getText().contains("Randevu Verildi"));
 
 
     }
