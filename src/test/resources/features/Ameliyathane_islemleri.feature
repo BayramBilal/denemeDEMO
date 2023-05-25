@@ -2,10 +2,11 @@
 Feature: Probel Ameliyathane İşlemleri
 
   Background:
+
     Given the user logs in
-
-
+@1
   Scenario: Ameliyat Randevu Oluşturma
+
     When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
     And Enter service code and selects service
     And Clicks Yeni Randevu button
@@ -14,7 +15,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-  @zafer
+@2
   Scenario: Ameliyat Listesi Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
@@ -30,20 +31,22 @@ Feature: Probel Ameliyathane İşlemleri
     Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
-  @ameliyatRefik
+  @3
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
-    ##And user selects surgery department in order to approve
+    And User selects appointment date
+    And user selects surgery department in order to approve "KBB"
     And user taps on the Salon Islemleri
     And Approve the selected salon name
-    ##And User selects patient from protocol number 501069666
+    ##And Approve pop-up message
+    And User selects patient from protocol number "501071676"
     And Patient is sent to the surgery hall
     And Clicks pop-up message
     Then Ameliyathaneye indirildi is visible
 
 
-  @Timur
-  Scenario: Ameliyathane Malzeme İşlemleri (Salon onayı sonrası hasta buraya gelir)
+@4
+  Scenario: Ameliyathane Malzeme İşlemleri - Salon onayı sonrası hasta buraya gelir
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
     And The user Selects date and service information
     And The user clicks one of the patient from the patient raw
@@ -59,8 +62,8 @@ Feature: Probel Ameliyathane İşlemleri
     And The user selects Tamam from the pop Up menu
 
 
-  @Dr
-  Scenario: Doktor Ameliyathane İşlemleri (Salon onayı sonrası)
+@5
+  Scenario: Doktor Ameliyathane İşlemleri - Salon onayı sonrası
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
     And Enters the operation date and click Yenile button
     And Selects the approved salon and click sec button
