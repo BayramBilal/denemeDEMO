@@ -3,10 +3,10 @@ Feature: Probel Ameliyathane İşlemleri
 
   Background:
 
-    Given the user logs in
+
 @1
   Scenario: Ameliyat Randevu Oluşturma
-
+    Given the user logs in
     When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
     And Enter service code and selects service
     And Clicks Yeni Randevu button
@@ -35,11 +35,11 @@ Feature: Probel Ameliyathane İşlemleri
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
-    And user selects surgery department in order to approve "KBB"
+    And user selects surgery department in order to approve KBB
     And user taps on the Salon Islemleri
     And Approve the selected salon name
     ##And Approve pop-up message
-    And User selects patient from protocol number "501071676"
+    #And User selects patient from protocol number "501071676"
     And Patient is sent to the surgery hall
     And Clicks pop-up message
     Then Ameliyathaneye indirildi is visible
@@ -56,7 +56,7 @@ Feature: Probel Ameliyathane İşlemleri
     And The user clicks Tumunu Sec button from the Malzeme Ekle Menu
     And The user selects Malzeme Isle & Guncelle Button
     And The user selects Evet from the pop Up menu
-    And The user selects Tamam from the pop Up menu
+    ##And The user selects Tamam from the pop Up menu
     And The user selects Ilaclari Isle & Guncelle Button
     And The user selects Evet from the pop Up menu
     And The user selects Tamam from the pop Up menu

@@ -32,7 +32,7 @@ public class AmeliyathanePage {
 
 
 
-    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_DXDataRow0\"]/td[2]")
+    @FindBy(xpath = "//tbody//td[contains(text(),'Randevu Verildi')]")
     public WebElement randevuTeyit;
     @FindBy(xpath = "//*[@id=\"BIRIM_KODU_ANA\"]")
     public WebElement AmeliyatBirimKodu;
@@ -166,28 +166,23 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//a[@class='text_btn text_btn_islem backWhite']")
     public WebElement salonIslemleri;
 
-    Actions actions = new Actions(Driver.getDriver());
-
-    public void salonIslemleriOnayi(){
-        actions.moveToElement(salonIslemleri).perform();
-    }
-
-    public void salonOnayla(){
-        BrowserUtils.waitFor(2);
-        actions.moveToElement(salonOnayla).perform();
-        salonOnayla.click();
-
-        Driver.getDriver().findElement(By.xpath("//*[@id=\"onayIcerik\"]/div/div[3]/span[1]")).click();
-    }
 
     @FindBy(xpath = "//tr[@data-servis-adi=\"BEYİN CERRAHİ SERVİSİ\"]")
     public WebElement beyinCerrahiMasasi;
 
-    @FindBy(xpath = "//tr[@data-servis-adi=\"KBB SERVİSİ\"]")
+    @FindBy(xpath = "//td[.='KBB']")
     public WebElement KBBMasasi;
 
-    @FindBy(xpath = "//a[@onclick='fncSalonOnay(this, false)']")
+    @FindBy(xpath = "//a[.='Salon Onayla']")
     public WebElement salonOnayla;
+
+    @FindBy(xpath = "//span[.='Evet']")
+    public WebElement salonOnaylaEvet;
+
+
+    @FindBy(xpath = "//table[@id='dxGridAmeliyatHastaListesi_DXMainTable']")
+    public WebElement tablotıkla;
+
 
     @FindBy(xpath = "//a[@onclick='fncOnayIptal(this, false)']")
     public WebElement salonIptal;
@@ -195,11 +190,14 @@ public class AmeliyathanePage {
     @FindBy(xpath = "/html/body/div[1]/div[4]/section/div[4]/div[2]/div[2]/div[6]/a[1]")
     public WebElement ameliyathaneGirisOnayı;
 
-    @FindBy(xpath = "//*[@id=\"dxGridAmeliyatHastaListesi_tccell0_9\"]/div")
+    @FindBy(xpath = "//div[contains(text(),'Ameliyathaneye İndirildi')]")
     public WebElement hastaDurumuAcıklaması;
 
-    @FindBy (xpath = "//td[.='501071683']")
+    @FindBy (xpath = "//input[@id='protokolAraInput']")
     public WebElement selectedPatient;
+    @FindBy (xpath = "//a[contains(text(),'Hasta Bul')]")
+    public WebElement HastaBul;
+
 
 //    @FindBy (xpath = "//*[@id=\"onayIcerik\"]/div/div[3]/span[1]")
     @FindBy (xpath = "//span[.='Evet']")
@@ -217,16 +215,6 @@ public class AmeliyathanePage {
     }
 
 
-    public void getSalonMethod(){
-        BrowserUtils.waitFor(3);
-        WebElement salon = Driver.getDriver().findElement(By.xpath("//td[.='KBB']"));
-        actions.moveToElement(salon);
-        BrowserUtils.waitForClickablility(salon,5);
-        salon.click();
-        BrowserUtils.waitFor(3);
-
-
-    }
     @FindBy(xpath = "//*[@id=\"onayIcerik\"]/div/div[3]/span[1]")
     public WebElement approveMessage;
 
@@ -370,7 +358,7 @@ public class AmeliyathanePage {
     public WebElement labelCheckMargin6;
     @FindBy(xpath = "//span[.='Evet']")
     public WebElement malzemeIsleOnayTamam;
-    @FindBy(xpath = "//span[@class='warning item']")
+    @FindBy(xpath = "//span[.='Tamam']") //span[@class='warning item']
     public WebElement malzemeIsleUyariOnayTamam;
     @FindBy(xpath = "//span[@class='yes item']")
     public WebElement spanEvet2;

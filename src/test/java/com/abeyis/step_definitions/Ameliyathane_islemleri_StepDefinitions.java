@@ -3,6 +3,7 @@ package com.abeyis.step_definitions;
 import com.abeyis.pages.AmeliyathanePage;
 import com.abeyis.pages.LoginPage;
 import com.abeyis.utilities.BrowserUtils;
+import com.abeyis.utilities.ConfigurationReader;
 import com.abeyis.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -27,7 +28,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     Actions actions = new Actions(Driver.getDriver());
 
-
+    String ameliyatTarihi = "02.06.2023";
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
     public void the_user_hover_over_ameliyathane_işlemleri_and_selects_ameliyat_randevu() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
@@ -41,38 +42,47 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void enter_service_code_and_selects_service() {
         ameliyathanePage.AmeliyatBirimKodu.click();
         //ameliyathanePage.AmeliyatBirimKodu.clear();
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
+        BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
+        BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
     }
 
     @When("Clicks Yeni Randevu button")
     public void clicks_yeni_randevu_button() {
-        BrowserUtils.waitFor(5);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.YeniRandevuButton.click();
     }
 
     @When("Selects patient using protocol number")
     public void selects_patient_using_protocol_number() {
-        BrowserUtils.waitFor(5);
-        ameliyathanePage.ProtokolNoRandevu.sendKeys("501071678");
-        ameliyathanePage.ProtokolNoRandevu.sendKeys(Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.ProtokolNoRandevu.sendKeys("501071678",Keys.ENTER);
+
     }
 
     @When("Enters the Ameliyat-randevu date-time and save")
     public void enters_the_ameliyat_randevu_date_time_and_save() {
+        BrowserUtils.waitFor(3);
         ameliyathanePage.ameliyatAdiListe.click();
+        BrowserUtils.waitFor(3);
         ameliyathanePage.abdominoplastiSec.click();
+        BrowserUtils.waitFor(3);
         ameliyathanePage.tarihRandevu.click();
-        ameliyathanePage.tarihRandevu.sendKeys("05.06.2023", Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.tarihRandevu.sendKeys(ameliyatTarihi, Keys.ENTER);
 //        ameliyathanePage.randevuTarihi2.click();
 //        ameliyathanePage.selectMonth.click();
 //        ameliyathanePage.optionHaziran.click();
 //        ameliyathanePage.haziranBir.click();
         ameliyathanePage.saatSec.click();
+        BrowserUtils.waitFor(3);
         ameliyathanePage.saatOnBir.click();
+        BrowserUtils.waitFor(3);
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
     }
 
@@ -89,12 +99,13 @@ public class Ameliyathane_islemleri_StepDefinitions {
 //        actualResult = ameliyathanePage.randevuVerildiText.getText();
 //        Assert.assertEquals(expectedResult, actualResult);
 //        System.out.println("actualResult = " + actualResult);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihSon.click();
         BrowserUtils.waitFor(3);
-        ameliyathanePage.RandevuTarihSon.sendKeys("05.06.2023", Keys.ENTER);
+        ameliyathanePage.RandevuTarihSon.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihYenile.click();
-        BrowserUtils.waitForVisibility(ameliyathanePage.randevuTeyit, 10);
+        BrowserUtils.waitFor(3);
         Assert.assertTrue(ameliyathanePage.randevuTeyit.getText().contains("Randevu Verildi"));
 
 
@@ -114,7 +125,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatTarih.click();
         BrowserUtils.waitFor(3);
-        ameliyathanePage.AmeliyatTarih.sendKeys("03.06.2023", Keys.ENTER);
+        ameliyathanePage.AmeliyatTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.ServisKodu.click();
         BrowserUtils.waitFor(3);
@@ -234,37 +245,50 @@ public class Ameliyathane_islemleri_StepDefinitions {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
         wait.until(ExpectedConditions.visibilityOf(loginPage.hastaislemleri));
         loginPage.hastaislemleri.click();
+        BrowserUtils.waitFor(2);
         loginPage.ameliyathaneIslemleri.click();
+        BrowserUtils.waitFor(2);
         loginPage.ameliyathaneIslem.click();
 
     }
 
 
-    @And("user selects surgery department in order to approve {string}")
-    public void userSelectsSurgeryDepartmentInOrderToApprove(String salonAdi) {
-        ameliyathanePage.getSalonMethod();
+    @And("user selects surgery department in order to approve KBB")
+    public void userSelectsSurgeryDepartmentInOrderToApprove() {
+        BrowserUtils.waitFor(2);
+        ameliyathanePage.KBBMasasi.click();
     }
 
     @And("user taps on the Salon Islemleri")
     public void userTapsOnTheSalonIslemleri() {
-        ameliyathanePage.salonIslemleriOnayi();
+        BrowserUtils.waitFor(2);
+        actions.moveToElement(ameliyathanePage.salonIslemleri).perform();
     }
-
 
     @And("Approve the selected salon name")
     public void approveTheSelectedSalonName() {
-        ameliyathanePage.salonOnayla();
+        BrowserUtils.waitFor(2);
+        actions.moveToElement(ameliyathanePage.salonOnayla).perform();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.salonOnayla.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.salonOnaylaEvet.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.tablotıkla.click();
+        BrowserUtils.waitFor(3);
 
     }
 
     @And("Patient is sent to the surgery hall")
     public void patientIsSentToTheSurgeryHall() {
+        actions.sendKeys(Keys.PAGE_DOWN);
         BrowserUtils.waitForClickablility(ameliyathanePage.linkHastaGiriYap, 10);
         BrowserUtils.jsclick(ameliyathanePage.linkHastaGiriYap);
     }
 
     @Then("Ameliyathaneye indirildi is visible")
     public void ameliyathaneyeIndirildiIsVisible() {
+        actions.sendKeys(Keys.PAGE_UP);
         BrowserUtils.waitFor(5);
         Assert.assertTrue(ameliyathanePage.hastaDurumuAcıklaması.getText().contains("Ameliyathaneye İndirildi"));
     }
@@ -275,7 +299,9 @@ public class Ameliyathane_islemleri_StepDefinitions {
         BrowserUtils.waitFor(3);
         BrowserUtils.waitForClickablility(ameliyathanePage.AmeliyatTarih,10);
         ameliyathanePage.AmeliyatTarih.click();
-        ameliyathanePage.AmeliyatTarih.sendKeys("03.06.2023", Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.refreshMethod();
     }
 
@@ -292,10 +318,10 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @And("User selects patient from protocol number {string}")
     public void userSelectsPatientFromProtocolNumber(String protocolNumber) {
-        WebElement patient = Driver.getDriver().findElement(By.xpath("//td[.="+protocolNumber+"]"));
-        //ameliyathanePage.selectedPatient.click();
-        patient.click();
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.selectedPatient.sendKeys(ConfigurationReader.getProperty("protokolNo"));
+        BrowserUtils.waitFor(3);
+        BrowserUtils.jsclick(ameliyathanePage.HastaBul);
 
     }
 
@@ -318,7 +344,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void theUserSelectsDateAndServiceInformation() {
         BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatTarih.click();
-        ameliyathanePage.AmeliyatTarih.sendKeys("03.06.2023", Keys.ENTER);
+        ameliyathanePage.AmeliyatTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.malzemeKBB.sendKeys("KBB", Keys.ENTER);
 
@@ -377,7 +403,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @And("The user selects Tamam from the pop Up menu")
     public void theUserSelectsTamamFromThePopUpMenu() {
-        BrowserUtils.waitForVisibility(ameliyathanePage.malzemeIsleUyariOnayTamam, 10);
+        BrowserUtils.waitFor(5);
         ameliyathanePage.malzemeIsleUyariOnayTamam.click();
     }
 
@@ -410,7 +436,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.KayitKapat.click();
         BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatTarih.click();
-        ameliyathanePage.AmeliyatTarih.sendKeys("03.06.2023", Keys.ENTER);
+        ameliyathanePage.AmeliyatTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(5);
         BrowserUtils.jsclick(ameliyathanePage.Yenile);
 
@@ -476,7 +502,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.Postop.click();
         BrowserUtils.waitFor(5);
         ameliyathanePage.PostopTarih.click();
-        ameliyathanePage.PostopTarih.sendKeys("03.06.2023", Keys.ENTER);
+        ameliyathanePage.PostopTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(5);
         ameliyathanePage.PostopYenile.click();
         BrowserUtils.waitFor(5);
