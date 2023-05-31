@@ -4,7 +4,7 @@ Feature: Probel Ameliyathane İşlemleri
   Background:
 
 
-@1
+@smoke
   Scenario: Ameliyat Randevu Oluşturma
     Given the user logs in
     When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
@@ -15,8 +15,9 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-@2
+@smoke
   Scenario: Ameliyat Listesi Oluşturma
+
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
     And Selects date and service information
     And Add Salon from Salon Islemleri
@@ -31,7 +32,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
-  @3
+  @smoke
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
@@ -45,7 +46,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Ameliyathaneye indirildi is visible
 
 
-@4
+  @smoke
   Scenario: Ameliyathane Malzeme İşlemleri - Salon onayı sonrası hasta buraya gelir
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Malzeme
     And The user Selects date and service information
@@ -62,7 +63,7 @@ Feature: Probel Ameliyathane İşlemleri
     And The user selects Tamam from the pop Up menu
 
 
-@5
+  @smoke
   Scenario: Doktor Ameliyathane İşlemleri - Salon onayı sonrası
     When the user hover over Ameliyathane İşlemleri and selects Dr_Ameliyathane_islemleri
     And Enters the operation date and click Yenile button

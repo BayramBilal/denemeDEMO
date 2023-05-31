@@ -255,25 +255,25 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @And("user selects surgery department in order to approve KBB")
     public void userSelectsSurgeryDepartmentInOrderToApprove() {
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.KBBMasasi.click();
     }
 
     @And("user taps on the Salon Islemleri")
     public void userTapsOnTheSalonIslemleri() {
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(3);
         actions.moveToElement(ameliyathanePage.salonIslemleri).perform();
     }
 
     @And("Approve the selected salon name")
     public void approveTheSelectedSalonName() {
-        BrowserUtils.waitFor(2);
+        BrowserUtils.waitFor(5);
         actions.moveToElement(ameliyathanePage.salonOnayla).perform();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(5);
         ameliyathanePage.salonOnayla.click();
         BrowserUtils.waitFor(3);
         ameliyathanePage.salonOnaylaEvet.click();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(5);
         ameliyathanePage.tablotıkla.click();
         BrowserUtils.waitFor(3);
 
