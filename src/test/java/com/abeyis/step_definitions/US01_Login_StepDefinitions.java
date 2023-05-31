@@ -20,11 +20,11 @@ public class US01_Login_StepDefinitions {
     public void the_user_logs_in() {
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         loginPage.login();
-        BrowserUtils.waitFor(4);
-        loginPage.BilgileriDegistir.click();
-        BrowserUtils.waitFor(3);
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        loginPage.Degistir.click();
+//        BrowserUtils.waitFor(4);
+//        loginPage.BilgileriDegistir.click();
+//        BrowserUtils.waitFor(3);
+//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+//        loginPage.Degistir.click();
 
     }
 
