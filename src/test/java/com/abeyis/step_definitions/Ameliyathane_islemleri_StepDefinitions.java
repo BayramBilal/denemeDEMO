@@ -28,7 +28,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     Actions actions = new Actions(Driver.getDriver());
 
-    String ameliyatTarihi = "06.06.2023";
+    String ameliyatTarihi = "07.06.2023";
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
     public void the_user_hover_over_ameliyathane_işlemleri_and_selects_ameliyat_randevu() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
