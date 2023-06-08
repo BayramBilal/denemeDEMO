@@ -30,8 +30,6 @@ public class AmeliyathanePage {
     @FindBy(id = "btnAmeliyatRandevuListele")
     public WebElement RandevuTarihYenile;
 
-
-
     @FindBy(xpath = "//tbody//td[contains(text(),'Randevu Verildi')]")
     public WebElement randevuTeyit;
     @FindBy(xpath = "//*[@id=\"BIRIM_KODU_ANA\"]")
@@ -364,6 +362,8 @@ public class AmeliyathanePage {
     public WebElement spanEvet2;
     @FindBy(xpath = "//span[@class='warning item']")
     public WebElement spanTamam2;
+    @FindBy(xpath ="//tbody//td[contains(text(),'Randevu Ertelendi')]")
+    public WebElement randevuErtelendiTeyit;
 
 
 
