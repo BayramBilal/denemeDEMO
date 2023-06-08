@@ -46,7 +46,10 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Clicks Yeni Randevu button
     And Selects patient using protocol number
     And Enters the Ameliyat-randevu date-time and save
-    Then Randevu Verildi text is seen
+    And Randevu Verildi text is seen
+    And clicks to dropdown menu
+    And Clicks Randevu sil button from dropdown
+    And clicks to Evet
 
   Scenario: Ameliyat Randevu Oluşturma-Randevu Raporu ve Yeni Ameliyat  Bilal
 
