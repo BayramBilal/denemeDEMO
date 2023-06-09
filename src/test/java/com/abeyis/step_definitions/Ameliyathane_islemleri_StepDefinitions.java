@@ -28,7 +28,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     Actions actions = new Actions(Driver.getDriver());
 
-    String ameliyatTarihi = "07.06.2023";
+    String ameliyatTarihi = "12.06.2023";
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
     public void the_user_hover_over_ameliyathane_işlemleri_and_selects_ameliyat_randevu() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
@@ -40,75 +40,50 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     @When("Enter service code and selects service")
     public void enter_service_code_and_selects_service() {
+        BrowserUtils.waitFor(3);
         ameliyathanePage.AmeliyatBirimKodu.click();
-        //ameliyathanePage.AmeliyatBirimKodu.clear();
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020");
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.AmeliyatBirimKodu.sendKeys(Keys.ENTER);
+        ameliyathanePage.AmeliyatBirimKodu.clear();
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys("2055", Keys.ENTER);
     }
 
     @When("Clicks Yeni Randevu button")
     public void clicks_yeni_randevu_button() {
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(1);
         ameliyathanePage.YeniRandevuButton.click();
     }
 
     @When("Selects patient using protocol number")
     public void selects_patient_using_protocol_number() {
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.ProtokolNoRandevu.sendKeys("501071678",Keys.ENTER);
-
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.ProtokolNoRandevu.sendKeys("15256235",Keys.ENTER);
     }
 
     @When("Enters the Ameliyat-randevu date-time and save")
     public void enters_the_ameliyat_randevu_date_time_and_save() {
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.ameliyatAdiListe.click();
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.abdominoplastiSec.click();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.ameliyatKodu.sendKeys("617341", Keys.ENTER);
+        BrowserUtils.waitFor(1);
         ameliyathanePage.tarihRandevu.click();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(1);
         ameliyathanePage.tarihRandevu.sendKeys(ameliyatTarihi, Keys.ENTER);
-//        ameliyathanePage.randevuTarihi2.click();
-//        ameliyathanePage.selectMonth.click();
-//        ameliyathanePage.optionHaziran.click();
-//        ameliyathanePage.haziranBir.click();
         ameliyathanePage.saatSec.click();
-        BrowserUtils.waitFor(3);
-        ameliyathanePage.saatOnBir.click();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.saatOnUc.click();
+        BrowserUtils.waitFor(1);
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
     }
 
-    String expectedResult = "Randevu Verildi";
-    String actualResult;
-
     @Then("Randevu Verildi text is seen")
     public void randevu_verildi_text_is_seen() {
-//        ameliyathanePage.inputTarihAna.click();
-//        ameliyathanePage.selectMonthAna.click();
-//        ameliyathanePage.optionHaziranAna.click();
-//        ameliyathanePage.haziranBirAna.click();
-//        BrowserUtils.waitFor(2);
-//        actualResult = ameliyathanePage.randevuVerildiText.getText();
-//        Assert.assertEquals(expectedResult, actualResult);
-//        System.out.println("actualResult = " + actualResult);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihSon.click();
-        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(1);
         ameliyathanePage.RandevuTarihSon.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihYenile.click();
         BrowserUtils.waitFor(3);
         Assert.assertTrue(ameliyathanePage.randevuTeyit.getText().contains("Randevu Verildi"));
-
-
     }
 
     //Zafer

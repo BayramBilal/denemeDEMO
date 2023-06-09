@@ -14,22 +14,17 @@ public class AmeliyathanePage {
     public AmeliyathanePage() {
 
         PageFactory.initElements(Driver.getDriver(), this);
-
     }
 
 
     // Ameliyat Randevu Oluşturma - Veli
 
-
     @FindBy(id = "RANDEVU_TARIHI")
     public WebElement tarihRandevu;
-
     @FindBy(id = "TXT_TARIH")
     public WebElement RandevuTarihSon;
-
     @FindBy(id = "btnAmeliyatRandevuListele")
     public WebElement RandevuTarihYenile;
-
     @FindBy(xpath = "//tbody//td[contains(text(),'Randevu Verildi')]")
     public WebElement randevuTeyit;
     @FindBy(xpath = "//*[@id=\"BIRIM_KODU_ANA\"]")
@@ -38,48 +33,14 @@ public class AmeliyathanePage {
     public WebElement YeniRandevuButton;
     @FindBy(xpath = "//a[@onclick='fSaatler()']")
     public WebElement saatSec;
-    @FindBy(xpath = "//a[@data-saat='11 : 00']")
-    public WebElement saatOnBir;
+    @FindBy(xpath = "//a[@data-saat='13 : 00']")
+    public WebElement saatOnUc;
     @FindBy(xpath = "//*[@id=\"PROTOKOL_NO_RND\"]")
     public WebElement ProtokolNoRandevu;
-    @FindBy(xpath = "/html/body/div[7]/div[2]/div[2]/div/div[2]/div/div[8]/div/input[3]")
-    public WebElement ameliyatAdiListe;
-    @FindBy(xpath = "//a[@data-lookupvalue='603500']")
-    public WebElement abdominoplastiSec;
-    @FindBy(id = "RANDEVU_TARIHI")
-    public WebElement randevuTarihi2;
-    @FindBy(xpath = "//select[@data-handler='selectMonth']")
-    public WebElement selectMonth;
-    @FindBy(xpath = "/html/body/div[6]/div[1]/div/select[1]/option[6]")
-    public WebElement optionHaziran;
-    @FindBy(xpath = "/html/body/div[6]/table/tbody/tr[1]/td[4]/a")
-    public WebElement haziranBir;
+    @FindBy(xpath = "//*[@id=\"BUTCE_KODU\"]")
+    public WebElement ameliyatKodu;
     @FindBy(id = "PopupSaveButton_0")
     public WebElement ameliyatRandevuKaydetButton;
-    @FindBy(xpath = "//*[@id='TXT_TARIH']")
-    public WebElement inputTarihAna;
-    @FindBy(xpath = "//select[@data-handler='selectMonth']")
-    public WebElement selectMonthAna;
-    @FindBy(xpath = "//option[@value='5']")
-    public WebElement optionHaziranAna;
-    @FindBy(xpath = "/html/body/div[6]/table/tbody/tr[1]/td[4]/a")
-    public WebElement haziranBirAna;
-    @FindBy(xpath = "//td[contains(@style, 'hite')]")
-    public WebElement randevuVerildiText;
-    @FindBy(xpath = "//*[@id=\"divAmeliyatRandevu\"]/div[1]/div[6]/div/a")
-    public WebElement AmeliyatIslemlerCarki;
-    @FindBy(xpath = "//*[@id=\"divAmeliyatRandevu\"]/div[1]/div[6]/div/ul/li[1]/a")
-    public WebElement AmeliyatBirimTanimlari;
-    @FindBy(xpath = "//*[@id=\"Ameliyat_Birim_Tanim_Liste_DXFREditorcol0_I\"]")
-    public WebElement AmeliyatBirimTanimlariBirimAlani;
-    @FindBy(xpath = "//*[@id=\"Ameliyat_Birim_Tanim_Liste_tccell0_4\"]/a[1]")
-    public WebElement AmeliyatBirimTanimlariBirimDuzenle;
-    @FindBy(xpath = "//*[@id=\"GUNLUK_MAKS_KAYIT\"]")
-    public WebElement AmeliyatBirimTanimlariGunlukMax;
-    @FindBy(xpath = "//*[@id='btnTanimiKaydet']")
-    public WebElement AmeliyatBirimTanimlariKaydet;
-    @FindBy(xpath = "//*[@id=\"1684305088\"]/div[2]/div[1]/a")
-    public WebElement AmeliyatBirimTanimlariKapat;
 
 
 
