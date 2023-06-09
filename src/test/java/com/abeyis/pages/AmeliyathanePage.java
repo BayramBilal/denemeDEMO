@@ -19,19 +19,16 @@ public class AmeliyathanePage {
 
     // Ameliyat Randevu Oluşturma - Veli
 
-
-
     @FindBy(xpath = "(//span[@class='hem_button hem_border hem_islem backWhite btnRndButonlar btnAcilirMenu'])[1]")
     public WebElement randevuDuzenlemeCarki;
+    @FindBy(xpath = "/html/body/div[8]/div/ul/li[1]/a")
+    public WebElement randevuDuzelt;
     @FindBy(id = "RANDEVU_SAATI")
     public WebElement saatRandevuBox;
-
     @FindBy(xpath = "//input[@class='wickedpicker__controls__control--hours']")
     public WebElement randevuSaati;
-
     @FindBy(xpath = "//input[@class='wickedpicker__controls__control--minutes']")
     public WebElement randevuDakika;
-
     @FindBy(id = "RANDEVU_TARIHI")
     public WebElement tarihRandevu;
     @FindBy(id = "TXT_TARIH")
@@ -44,10 +41,6 @@ public class AmeliyathanePage {
     public WebElement AmeliyatBirimKodu;
     @FindBy(xpath = "//*[@id=\"divAmeliyatRandevu\"]/div[1]/a[2]")
     public WebElement YeniRandevuButton;
-    @FindBy(xpath = "//a[@onclick='fSaatler()']")
-    public WebElement saatSec;
-    @FindBy(xpath = "//a[@data-saat='13 : 00']")
-    public WebElement saatOnUc;
     @FindBy(xpath = "//*[@id=\"PROTOKOL_NO_RND\"]")
     public WebElement ProtokolNoRandevu;
     @FindBy(xpath = "//*[@id=\"BUTCE_KODU\"]")
