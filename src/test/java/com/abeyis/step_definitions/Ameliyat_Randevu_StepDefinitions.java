@@ -57,7 +57,7 @@ public class Ameliyat_Randevu_StepDefinitions {
     public void checkTheRandevuVerildiTextIsSeenOn(String date) {
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihSon.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihSon.sendKeys(date, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihYenile.click();
@@ -87,19 +87,25 @@ public class Ameliyat_Randevu_StepDefinitions {
     //Bilal
     @And("Select the patient from list to see the Randevu Raporu")
     public void selectThePatientFromListToSeeTheRandevuRaporu() {
-
+    ameliyathanePage.randevuCark.click();
 
     }
 
     @And("Click the Randevu Raporu button from dropdown to access the report")
     public void clickTheRandevuRaporuButtonFromDropdownToAccessTheReport() {
 
+        ameliyathanePage.randevuRaporu.click();
+        BrowserUtils.waitFor(2);
+        ameliyathanePage.ameliyatRandevuRaporu.isDisplayed();
 
     }
 
     @Then("Check the Randevu Raporu is seen and close report")
     public void checkTheRandevuRaporuIsSeenAndCloseReport() {
 
+        Assert.assertTrue(ameliyathanePage.ameliyatRandevuRaporu.getText().contains("Ameliyat Randevu Raporu"));
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.randevuRaporuKapat.click();
 
 
     }
@@ -107,17 +113,22 @@ public class Ameliyat_Randevu_StepDefinitions {
     @And("Click the Yeni Ameliyat button from dropdown")
     public void clickTheYeniAmeliyatButtonFromDropdown() {
 
+        ameliyathanePage.randevuCark.click();
+        ameliyathanePage.yeniAmeliyat.click();
+
+    }
+
+
+    @Then("Check not allowed to enter new patient for surgery by using Yeni Ameliyat button")
+    public void checkNotAllowedToEnterNewPatientForSurgeryByUsingYeniAmeliyatButton() {
+        BrowserUtils.waitFor(3);
+        Assert.assertTrue(ameliyathanePage.yetkiYokAlert.getText().contains("Yetki Yok"));
+        BrowserUtils.waitFor(5);
+        ameliyathanePage.yetkiYokAlertKapat.click();
 
 
     }
 
-
-    @Then("Check not allowed to enter new patient by using Yeni Ameliyat button")
-    public void checkNotAllowedToEnterNewPatientByUsingYeniAmeliyatButton() {
-
-
-
-    }
 
     @And("Click randevu düzenleme button and select randevu düzelt option")
     public void clickRandevuDüzenlemeButtonAndSelectRandevuDüzeltOption() {
@@ -125,4 +136,5 @@ public class Ameliyat_Randevu_StepDefinitions {
         BrowserUtils.waitFor(1);
         ameliyathanePage.randevuDuzelt.click();
     }
+
 }

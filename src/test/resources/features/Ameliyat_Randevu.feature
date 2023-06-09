@@ -77,9 +77,8 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Selects patient using "15242294"
     And Enters the Ameliyat-randevu "615441", "12.06.2023", "10", "00"
     And Check the Randevu Verildi text is seen on "12.06.2023"
-
-#    And Select the patient from list to see the Randevu Raporu
-#    And Click the Randevu Raporu button from dropdown to access the report
-#    Then Check the Randevu Raporu is seen and close report
-#    And Click the Yeni Ameliyat button from dropdown
-#    Then Check not allowed to enter new patient by using Yeni Ameliyat button
+    And Select the patient from list to see the Randevu Raporu
+    And Click the Randevu Raporu button from dropdown to access the report
+    Then Check the Randevu Raporu is seen and close report
+    And Click the Yeni Ameliyat button from dropdown
+    Then Check not allowed to enter new patient for surgery by using Yeni Ameliyat button

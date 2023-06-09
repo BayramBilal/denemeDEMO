@@ -21,8 +21,38 @@ public class AmeliyathanePage {
 
     @FindBy(xpath = "(//span[@class='hem_button hem_border hem_islem backWhite btnRndButonlar btnAcilirMenu'])[1]")
     public WebElement randevuDuzenlemeCarki;
+
+
+
+    @FindBy(id = "Ameliyat_Randevu_Liste_Paging_tccell0_0")
+    public WebElement randevuCark;
+
+    @FindBy(xpath = "/html/body/div[8]/div/ul/li[6]/a")
+    public WebElement randevuRaporu;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement randevuRaporuKapat;
+
+    @FindBy(xpath = "//div[.='Ameliyat Randevu Raporu']")
+    public WebElement ameliyatRandevuRaporu;
+
+    @FindBy(xpath = "//div[@class='content blckAcilirMenu']//li[7]")
+    public WebElement yeniAmeliyat;
+
+
+//    @FindBy(xpath = "//div[@class='alertText']")
+    @FindBy(xpath = "//h2[.='Yetki Yok']")
+    public WebElement yetkiYokAlert;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement yetkiYokAlertKapat;
+
+
+
+
     @FindBy(xpath = "/html/body/div[8]/div/ul/li[1]/a")
     public WebElement randevuDuzelt;
+
     @FindBy(id = "RANDEVU_SAATI")
     public WebElement saatRandevuBox;
     @FindBy(xpath = "//input[@class='wickedpicker__controls__control--hours']")
