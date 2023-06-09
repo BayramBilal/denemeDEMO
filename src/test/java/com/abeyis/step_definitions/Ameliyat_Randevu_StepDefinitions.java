@@ -28,23 +28,19 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.AmeliyatBirimKodu.clear();
         BrowserUtils.waitFor(1);
         ameliyathanePage.AmeliyatBirimKodu.sendKeys(serviceCode, Keys.ENTER);
-
     }
 
     @And("Selects patient using {string}")
     public void selectsPatientUsing(String protocolNumber) {
         BrowserUtils.waitFor(1);
         ameliyathanePage.ProtokolNoRandevu.sendKeys(protocolNumber, Keys.ENTER);
-
-
-
     }
 
     @And("Enters the Ameliyat-randevu {string}, {string}, {string}, {string}")
     public void entersTheAmeliyatRandevu(String ameliyat, String date, String hours, String minutes) {
-
-
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.ameliyatKodu.click();
+        ameliyathanePage.ameliyatKodu.clear();
         ameliyathanePage.ameliyatKodu.sendKeys(ameliyat, Keys.ENTER);
         BrowserUtils.waitFor(1);
         ameliyathanePage.tarihRandevu.click();
@@ -55,12 +51,10 @@ public class Ameliyat_Randevu_StepDefinitions {
         BrowserUtils.waitFor(1);
         ameliyathanePage.randevuDakika.sendKeys(minutes, Keys.ENTER);
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
-
     }
 
     @Then("Check the Randevu Verildi text is seen on {string}")
     public void checkTheRandevuVerildiTextIsSeenOn(String date) {
-
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihSon.click();
         BrowserUtils.waitFor(1);
@@ -69,8 +63,6 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.RandevuTarihYenile.click();
         BrowserUtils.waitFor(3);
         Assert.assertTrue(ameliyathanePage.randevuTeyit.getText().contains("Randevu Verildi"));
-
-
     }
 
     @And("clicks to dropdown menu")
@@ -127,6 +119,10 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     }
 
-
-
+    @And("Click randevu düzenleme button and select randevu düzelt option")
+    public void clickRandevuDüzenlemeButtonAndSelectRandevuDüzeltOption() {
+        ameliyathanePage.randevuDuzenlemeCarki.click();
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.randevuDuzelt.click();
+    }
 }
