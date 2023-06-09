@@ -67,10 +67,14 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.tarihRandevu.click();
         BrowserUtils.waitFor(1);
         ameliyathanePage.tarihRandevu.sendKeys(ameliyatTarihi, Keys.ENTER);
-        ameliyathanePage.saatSec.click();
+        ameliyathanePage.saatRandevuBox.click();
+        ameliyathanePage.randevuSaati.sendKeys("15");
         BrowserUtils.waitFor(1);
-        ameliyathanePage.saatOnUc.click();
-        BrowserUtils.waitFor(1);
+        ameliyathanePage.randevuDakika.sendKeys("15", Keys.ENTER);
+//        ameliyathanePage.saatSec.click();
+//        BrowserUtils.waitFor(1);
+//        ameliyathanePage.saatOnUc.click();
+//        BrowserUtils.waitFor(1);
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
     }
 

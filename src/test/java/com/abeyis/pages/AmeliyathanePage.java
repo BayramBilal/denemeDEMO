@@ -19,6 +19,19 @@ public class AmeliyathanePage {
 
     // Ameliyat Randevu Oluşturma - Veli
 
+
+
+    @FindBy(xpath = "(//span[@class='hem_button hem_border hem_islem backWhite btnRndButonlar btnAcilirMenu'])[1]")
+    public WebElement randevuDuzenlemeCarki;
+    @FindBy(id = "RANDEVU_SAATI")
+    public WebElement saatRandevuBox;
+
+    @FindBy(xpath = "//input[@class='wickedpicker__controls__control--hours']")
+    public WebElement randevuSaati;
+
+    @FindBy(xpath = "//input[@class='wickedpicker__controls__control--minutes']")
+    public WebElement randevuDakika;
+
     @FindBy(id = "RANDEVU_TARIHI")
     public WebElement tarihRandevu;
     @FindBy(id = "TXT_TARIH")
