@@ -151,13 +151,6 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     }
 
-    @And("Enters ameliyatErteleTarihi and ameliyatErteleNedeni")
-    public void entersAmeliyatErteleTarihiAndAmeliyatErteleNedeni() {
-        ameliyathanePage.randevuErtelemeTarihi.sendKeys("14.06.2023"+Keys.ENTER);
-        Select ameliyatErteleNedeniSelect= new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
-        ameliyatErteleNedeniSelect.selectByVisibleText("Zaman Yetmedi");
-
-    }
 
     @Then("Clicks randevuErteleKaydet button")
     public void clicksRandevuErteleKaydetButton() {
@@ -168,5 +161,12 @@ public class Ameliyat_Randevu_StepDefinitions {
     @Then("Clicks randevuErtelemeKapat button")
     public void clicksRandevuErtelemeKapatButton() {
         ameliyathanePage.randevuErtelemeKapat.click();
+    }
+
+    @And("Enters ameliyatErteleTarihi {string} and ameliyatErteleNedeni {string}")
+    public void entersAmeliyatErteleTarihiAndAmeliyatErteleNedeni(String tarih, String ertelemeNedeni) {
+        ameliyathanePage.randevuErtelemeTarihi.sendKeys(tarih + Keys.ENTER);
+        Select ameliyatErteleNedeniSelect= new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
+        ameliyatErteleNedeniSelect.selectByVisibleText(ertelemeNedeni);
     }
 }
