@@ -38,7 +38,12 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Clicks Yeni Randevu button
     And Selects patient using "15242294"
     And Enters the Ameliyat-randevu "618030", "12.06.2023", "15", "45"
-    Then Check the Randevu Verildi text is seen on "12.06.2023"
+    And Check the Randevu Verildi text is seen on "12.06.2023"
+    And Clicks ameliyatErteleRandevuDropDown
+    And Selects ameliyatErteleBtn
+    And Enters ameliyatErteleTarihi and ameliyatErteleNedeni
+    And Clicks randevuErteleKaydet button
+    Then Clicks randevuErtelemeKapat button
 
 
   @reg3

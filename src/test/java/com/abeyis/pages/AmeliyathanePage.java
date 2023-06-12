@@ -362,6 +362,28 @@ public class AmeliyathanePage {
     @FindBy(xpath ="//tbody//td[contains(text(),'Randevu Ertelendi')]")
     public WebElement randevuErtelendiTeyit;
 
+    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_tccell1_0\"]")
+    public WebElement ameliyatRandevuErteleDropdown1;
+
+    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_tccell1_0\"]/span")
+    public WebElement ameliyatRandevuErteleDropdown2;
+
+    @FindBy(xpath = "//*[@id=\"Ameliyat_Randevu_Liste_Paging_tccell2_0\"]/span")
+    public WebElement ameliyatRandevuErteleDropdown3;
+
+    @FindBy (xpath = "(//a[.=\"Randevu Ertele\"])[1]")
+    public WebElement randevuErtele1;
+
+    @FindBy (id="ERTELEME_TARIH")
+    public WebElement randevuErtelemeTarihi;
+    @FindBy (id="AmlErtelemeNedeniCombo")
+    public WebElement randevuErtelemeNedeniDrpDwn;
+    @FindBy (id="btnTanimiKaydet")
+    public WebElement randevuErtelemeKaydet;
+
+    @FindBy (xpath = "//a[@title=\"Kapat\"]")
+    public WebElement randevuErtelemeKapat;
+
 
 
 

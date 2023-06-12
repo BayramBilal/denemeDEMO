@@ -10,6 +10,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import com.abeyis.utilities.ConfigurationReader;
+import org.openqa.selenium.support.ui.Select;
 
 public class Ameliyat_Randevu_StepDefinitions {
 
@@ -137,4 +138,35 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.randevuDuzelt.click();
     }
 
+    @And("Clicks ameliyatErteleRandevuDropDown")
+    public void clicksAmeliyatErteleRandevuDropDown() {
+        BrowserUtils.jsclick(ameliyathanePage.ameliyatRandevuErteleDropdown1);
+
+    }
+
+    @And("Selects ameliyatErteleBtn")
+    public void selectsAmeliyatErteleBtn() {
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.randevuErtele1);
+
+    }
+
+    @And("Enters ameliyatErteleTarihi and ameliyatErteleNedeni")
+    public void entersAmeliyatErteleTarihiAndAmeliyatErteleNedeni() {
+        ameliyathanePage.randevuErtelemeTarihi.sendKeys("14.06.2023"+Keys.ENTER);
+        Select ameliyatErteleNedeniSelect= new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
+        ameliyatErteleNedeniSelect.selectByVisibleText("Zaman Yetmedi");
+
+    }
+
+    @Then("Clicks randevuErteleKaydet button")
+    public void clicksRandevuErteleKaydetButton() {
+        BrowserUtils.jsclick(ameliyathanePage.randevuErtelemeKaydet);
+
+    }
+
+    @Then("Clicks randevuErtelemeKapat button")
+    public void clicksRandevuErtelemeKapatButton() {
+        ameliyathanePage.randevuErtelemeKapat.click();
+    }
 }
