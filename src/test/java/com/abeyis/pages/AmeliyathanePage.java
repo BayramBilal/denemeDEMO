@@ -151,6 +151,16 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//*[@class='hem_right hem_okey']")
     public WebElement TıkButonu;
 
+    @FindBy(id ="Ameliyat_Randevu_Liste_Paging_DXMainTable")
+    public WebElement table;
+
+    @FindBy(id ="Ameliyat_Randevu_Liste_Paging_tccell0_0")
+    public WebElement çarksil;
+
+    @FindBy(xpath = " ( //a[.='Randevu Sil'])[2]")
+    public WebElement randevuSil;
+
+
     // Ameliyathane İşlemleri Oluşturma - Refik
 
     //menü butonu

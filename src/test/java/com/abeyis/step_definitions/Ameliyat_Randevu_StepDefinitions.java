@@ -68,17 +68,19 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     @And("clicks to dropdown menu")
     public void clicksToDropdownMenu() {
-
-
-
-    }
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.çarksil.click();    }
 
     @And("Clicks Randevu sil button from dropdown")
     public void clicksRandevuSilButtonFromDropdown() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.randevuSil.click();
     }
 
     @And("clicks to Evet")
     public void clicksToEvet() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.Evet.click();
     }
 
 
