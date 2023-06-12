@@ -41,7 +41,7 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Check the Randevu Verildi text is seen on "12.06.2023"
     And Clicks ameliyatErteleRandevuDropDown
     And Selects ameliyatErteleBtn
-    And Enters ameliyatErteleTarihi and ameliyatErteleNedeni
+    And Enters ameliyatErteleTarihi "14.06.2023" and ameliyatErteleNedeni "Zaman Yetmedi"
     And Clicks randevuErteleKaydet button
     Then Clicks randevuErtelemeKapat button
 
