@@ -383,6 +383,8 @@ public class AmeliyathanePage {
 
     @FindBy (xpath = "(//a[.=\"Randevu Ertele\"])[1]")
     public WebElement randevuErtele1;
+    @FindBy (xpath = "(//a[.=\"Ertelenen Randevu Listesi\"])[1]")
+    public WebElement ertelenenRandevuListesi;
 
     @FindBy (id="ERTELEME_TARIH")
     public WebElement randevuErtelemeTarihi;
@@ -393,6 +395,9 @@ public class AmeliyathanePage {
 
     @FindBy (xpath = "//a[@title=\"Kapat\"]")
     public WebElement randevuErtelemeKapat;
+
+    @FindBy (xpath = "//a[@title=\"Kapat\"]")
+    public WebElement ertelenenRandevuListesiKapat;
 
 
 

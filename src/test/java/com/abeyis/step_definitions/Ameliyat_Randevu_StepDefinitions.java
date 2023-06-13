@@ -171,4 +171,17 @@ public class Ameliyat_Randevu_StepDefinitions {
         Select ameliyatErteleNedeniSelect= new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
         ameliyatErteleNedeniSelect.selectByVisibleText(ertelemeNedeni);
     }
+
+    @And("Selects Ertelenen Randevu Listesi")
+    public void selectsErtelenenRandevuListesi() {
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.ertelenenRandevuListesi);
+
+    }
+
+    @Then("Clicks randevuErtelemeListesiKapat button")
+    public void clicksRandevuErtelemeListesiKapatButton() {
+        BrowserUtils.waitFor(2);
+        BrowserUtils.jsclick(ameliyathanePage.ertelenenRandevuListesiKapat);
+    }
 }
