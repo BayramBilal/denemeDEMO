@@ -48,7 +48,17 @@ public class AmeliyathanePage {
     public WebElement yetkiYokAlertKapat;
 
 
+    @FindBy(xpath = "//h2[.='HATA']")
+    public WebElement warningMessage;
 
+    @FindBy(xpath = "//p[.='Kayıt yapılamaz! Günlük maximum kayıt sayısı :1']")
+    public WebElement kayitYapilamazMessage;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement hataMesajiKapat;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement yeniRandevuKapat;
 
     @FindBy(xpath = "/html/body/div[8]/div/ul/li[1]/a")
     public WebElement randevuDuzelt;
@@ -178,6 +188,11 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//td[.='KBB']")
     public WebElement KBBMasasi;
 
+    public void salonSecMethod(String salonAdı){
+        WebElement salon = Driver.getDriver().findElement(By.xpath("//td[.="+salonAdı+"]"));
+        salon.click();
+    }
+
     @FindBy(xpath = "//a[.='Salon Onayla']")
     public WebElement salonOnayla;
 
@@ -209,7 +224,7 @@ public class AmeliyathanePage {
 
     public WebElement popUpMessage;
 
-    @FindBy(css = "a[class*='bildir']")
+    @FindBy(xpath = "//a[@onclick='funcHastaindirildi()']")
     public WebElement linkHastaGiriYap;
 
 
@@ -383,6 +398,8 @@ public class AmeliyathanePage {
 
     @FindBy (xpath = "(//a[.=\"Randevu Ertele\"])[1]")
     public WebElement randevuErtele1;
+    @FindBy (xpath = "(//a[.=\"Ertelenen Randevu Listesi\"])[1]")
+    public WebElement ertelenenRandevuListesi;
 
     @FindBy (id="ERTELEME_TARIH")
     public WebElement randevuErtelemeTarihi;
@@ -393,6 +410,9 @@ public class AmeliyathanePage {
 
     @FindBy (xpath = "//a[@title=\"Kapat\"]")
     public WebElement randevuErtelemeKapat;
+
+    @FindBy (xpath = "//a[@title=\"Kapat\"]")
+    public WebElement ertelenenRandevuListesiKapat;
 
 
 

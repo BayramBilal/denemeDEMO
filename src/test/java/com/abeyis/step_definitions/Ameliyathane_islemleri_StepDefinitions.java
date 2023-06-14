@@ -28,7 +28,9 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
     Actions actions = new Actions(Driver.getDriver());
 
-    String ameliyatTarihi = "13.06.2023";
+
+    String ameliyatTarihi = "16.06.2023";
+  
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
     public void the_user_hover_over_ameliyathane_işlemleri_and_selects_ameliyat_randevu() {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 30);
@@ -238,6 +240,13 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.KBBMasasi.click();
     }
 
+    @And("User selects surgery department in order to approve the department {string}")
+    public void userSelectsSurgeryDepartmentInOrderToApproveTheDeparment(String salonAdı) {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.salonSecMethod(salonAdı);
+    }
+
+
     @And("user taps on the Salon Islemleri")
     public void userTapsOnTheSalonIslemleri() {
         BrowserUtils.waitFor(3);
@@ -298,9 +307,10 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @And("User selects patient from protocol number {string}")
     public void userSelectsPatientFromProtocolNumber(String protocolNumber) {
         BrowserUtils.waitFor(3);
-        ameliyathanePage.selectedPatient.sendKeys(ConfigurationReader.getProperty("protokolNo"));
+        //ameliyathanePage.selectedPatient.sendKeys(ConfigurationReader.getProperty("protokolNo"));
+        ameliyathanePage.selectedPatient.sendKeys(protocolNumber);
         BrowserUtils.waitFor(3);
-        BrowserUtils.jsclick(ameliyathanePage.HastaBul);
+        //BrowserUtils.jsclick(ameliyathanePage.HastaBul);
 
     }
 
@@ -325,7 +335,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.AmeliyatTarih.click();
         ameliyathanePage.AmeliyatTarih.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
-        ameliyathanePage.malzemeKBB.sendKeys("KBB", Keys.ENTER);
+//        ameliyathanePage.malzemeKBB.sendKeys("KBB", Keys.ENTER);
 
     }
 
@@ -490,6 +500,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
         ameliyathanePage.PostopKapat.click();
 
     }
+
 
 
 }

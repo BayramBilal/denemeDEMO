@@ -32,15 +32,17 @@ Feature: Probel Ameliyathane İşlemleri
     Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
-  @smoke2 @randevusil
+  @smoke1Refik
+
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
-    And user selects surgery department in order to approve KBB
+    ##And user selects surgery department in order to approve KBB
+    ##And User selects surgery department in order to approve the department "Salon_1"
     And user taps on the Salon Islemleri
     And Approve the selected salon name
     ##And Approve pop-up message
-    #And User selects patient from protocol number "501071676"
+    And User selects patient from protocol number "15175989"
     And Patient is sent to the surgery hall
     And Clicks pop-up message
     Then Ameliyathaneye indirildi is visible
