@@ -15,7 +15,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-@smoke1
+@smoke1 @randevusil
   Scenario: Ameliyat Listesi Oluşturma
 
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
@@ -32,7 +32,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Surgery list is created Ameliyathane Bildir button disappears and a checkmark appears to the right of the salon name
 
 
-  @smoke1
+  @smoke2 @randevusil
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
