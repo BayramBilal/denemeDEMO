@@ -15,7 +15,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-@smoke1
+@smoke1 @randevusil
   Scenario: Ameliyat Listesi Oluşturma
 
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
@@ -33,6 +33,7 @@ Feature: Probel Ameliyathane İşlemleri
 
 
   @smoke1Refik
+
   Scenario: Ameliyathane İşlemleri Oluşturma
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
