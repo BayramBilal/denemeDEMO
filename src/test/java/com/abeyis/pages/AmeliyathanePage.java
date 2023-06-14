@@ -48,7 +48,17 @@ public class AmeliyathanePage {
     public WebElement yetkiYokAlertKapat;
 
 
+    @FindBy(xpath = "//h2[.='HATA']")
+    public WebElement warningMessage;
 
+    @FindBy(xpath = "//p[.='Kayıt yapılamaz! Günlük maximum kayıt sayısı :1']")
+    public WebElement kayitYapilamazMessage;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement hataMesajiKapat;
+
+    @FindBy(xpath = "//span[.='Kapat']")
+    public WebElement yeniRandevuKapat;
 
     @FindBy(xpath = "/html/body/div[8]/div/ul/li[1]/a")
     public WebElement randevuDuzelt;
