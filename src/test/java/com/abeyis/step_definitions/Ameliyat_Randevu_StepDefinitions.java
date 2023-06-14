@@ -33,7 +33,7 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     @And("Selects patient using {string}")
     public void selectsPatientUsing(String protocolNumber) {
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(2);
         ameliyathanePage.ProtokolNoRandevu.sendKeys(protocolNumber, Keys.ENTER);
     }
 
@@ -43,13 +43,13 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.ameliyatKodu.click();
         ameliyathanePage.ameliyatKodu.clear();
         ameliyathanePage.ameliyatKodu.sendKeys(ameliyat, Keys.ENTER);
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.tarihRandevu.click();
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.tarihRandevu.sendKeys(date, Keys.ENTER);
         ameliyathanePage.saatRandevuBox.click();
         ameliyathanePage.randevuSaati.sendKeys(hours);
-        BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(3);
         ameliyathanePage.randevuDakika.sendKeys(minutes, Keys.ENTER);
         ameliyathanePage.ameliyatRandevuKaydetButton.click();
     }
@@ -132,6 +132,20 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     }
 
+    @Then("Check if the daily surgery capacity is exceeded or not by having warning message")
+    public void checkIfTheDailySurgeryCapacityIsExceededOrNotByHavingWarningMessage() {
+
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.warningMessage.isDisplayed();
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue(ameliyathanePage.kayitYapilamazMessage.getText().contains("Kayıt yapılamaz! Günlük maximum kayıt sayısı :1"));
+        BrowserUtils.waitFor(5);
+        ameliyathanePage.hataMesajiKapat.click();
+        BrowserUtils.waitFor(2);
+        ameliyathanePage.yeniRandevuKapat.click();
+
+
+    }
 
     @And("Click randevu düzenleme button and select randevu düzelt option")
     public void clickRandevuDüzenlemeButtonAndSelectRandevuDüzeltOption() {
@@ -184,4 +198,6 @@ public class Ameliyat_Randevu_StepDefinitions {
         BrowserUtils.waitFor(2);
         BrowserUtils.jsclick(ameliyathanePage.ertelenenRandevuListesiKapat);
     }
+
+
 }
