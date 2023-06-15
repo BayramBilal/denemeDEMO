@@ -38,18 +38,34 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Enter "1024" and selects service
     And Clicks Yeni Randevu button
     And Selects patient using "15242294"
-    And Enters the Ameliyat-randevu "618030", "13.06.2023", "15", "45"
-    And Check the Randevu Verildi text is seen on "13.06.2023"
+    And Enters the Ameliyat-randevu "618030", "15.06.2023", "15", "45"
+    And Check the Randevu Verildi text is seen on "15.06.2023"
     And Clicks ameliyatErteleRandevuDropDown
     And Selects ameliyatErteleBtn
-    And Enters ameliyatErteleTarihi "14.06.2023" and ameliyatErteleNedeni "Zaman Yetmedi"
+    And Enters ameliyatErteleTarihi "16.06.2023" and ameliyatErteleNedeni "Zaman Yetmedi"
     And Clicks randevuErteleKaydet button
     And Clicks randevuErtelemeKapat button
     And Clicks ameliyatErteleRandevuDropDown
     And Selects Ertelenen Randevu Listesi
     Then Clicks randevuErtelemeListesiKapat button
 
+  @reg2-1
+  Scenario: Ameliyat Randevu Oluşturma-Ertele ve Ertelenen Randevu Listesi Negative TC Timur
 
+    When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
+    And Enter "1024" and selects service
+    And Clicks Yeni Randevu button
+    And Selects patient using "15242294"
+    And Enters the Ameliyat-randevu "618030", "15.06.2023", "15", "45"
+    And Check the Randevu Verildi text is seen on "15.06.2023"
+    And Clicks ameliyatErteleRandevuDropDown
+    And Selects ameliyatErteleBtn
+    And Enters ameliyatErteleTarihi "08.06.2023" and ameliyatErteleNedeni "Malzeme Eksik"
+    And Clicks randevuErteleKaydet button
+    And Clicks randevuErtelemeKapat button
+    And Clicks ameliyatErteleRandevuDropDown
+    And Selects Ertelenen Randevu Listesi
+    Then Clicks randevuErtelemeListesiKapat button
 
   @reg3
     #    Genel Cerrahi
