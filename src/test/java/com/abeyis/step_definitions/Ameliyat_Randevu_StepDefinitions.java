@@ -200,7 +200,45 @@ public class Ameliyat_Randevu_StepDefinitions {
     }
 
 
+    @And("The user confirms the deletion of the appointment")
+    public void theUserConfirmsTheDeletionOfTheAppointment() {
+        System.out.println("randevu sil tablo= "+ ameliyathanePage.randevuSilTablo.getText());
+        Assert.assertTrue(ameliyathanePage.randevuSilTablo.getText().contains("15175989"));
+    }
 
+    @And("The user created Ameliyat Listesi and Ameliyat İslemleri")
+    public void theUserCreatedAmeliyatListesiAndAmeliyatİslemleri() {
+        //ameliyat listesi
+        Ameliyathane_islemleri_StepDefinitions ameliyathane_islemleri=new Ameliyathane_islemleri_StepDefinitions();
+        ameliyathane_islemleri.theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneListe();
+        ameliyathane_islemleri.selectsDateAndServiceInformation();
+        ameliyathane_islemleri.addSalonFromSalonIslemleri();
+        ameliyathane_islemleri.selectThePatientToBeOperated();
+        ameliyathane_islemleri.setTheOperationTime();
+        ameliyathane_islemleri.addOperationAtHastayaYapilacakAmeliyatlar();
+        ameliyathane_islemleri.selectSurgicalSurgeryTeamAt();
+        ameliyathane_islemleri.selectThePersonResponsibleForTheSurgicalSurgeryTeam();
+        ameliyathane_islemleri.selectAnesthesiaSurgeryTeam();
+        ameliyathane_islemleri.selectThePersonResponsibleForTheAnesthesiaSurgeryTeam();
+        ameliyathane_islemleri.reportOperatingRoomByClickingAmeliyathaneBildir();
+        ameliyathane_islemleri.surgeryListIsCreatedAmeliyathaneBildirButtonDisappearsAndACheckmarkAppearsToTheRightOfTheSalonName();
+        //Ameliyathane işlemleri
+        ameliyathane_islemleri.theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneIslemleri();
+        ameliyathane_islemleri.userSelectsAppointmentDate();
+        ameliyathane_islemleri.userTapsOnTheSalonIslemleri();
+        ameliyathane_islemleri.approveTheSelectedSalonName();
+        ameliyathane_islemleri.patientIsSentToTheSurgeryHall();
+        ameliyathane_islemleri.clicksPopUpMessage();
+        ameliyathane_islemleri.ameliyathaneyeIndirildiIsVisible();
+    }
 
-
+    @And("The user enters the unit code and then presses refresh")
+    public void theUserEntersTheUnitCodeAndThenPressesRefresh() {
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.AmeliyatBirimKodu.click();
+        ameliyathanePage.AmeliyatBirimKodu.clear();
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020", Keys.ENTER);
+        ameliyathanePage.btnAmeliyatRandevuListele.click();
+    }
 }

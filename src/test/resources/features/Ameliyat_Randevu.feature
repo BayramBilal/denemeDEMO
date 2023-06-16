@@ -77,7 +77,24 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Clicks Randevu sil button from dropdown
     And clicks to Evet
 
-#    ameliyathanede olan hasta için Randevu Sil
+  @reg4a
+#    Kadın doğum servisi ameliyathanede olan hasta için Randevu Sil
+  Scenario: Ameliyat işlemi Onaylandıktan Sonra Randevu Silme İşlemi
+
+    When The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
+    And Enter "1020" and selects service
+    And Clicks Yeni Randevu button
+    And Selects patient using "15175989"
+    And Enters the Ameliyat-randevu "619922", "16.06.2023", "15", "00"
+    And Check the Randevu Verildi text is seen on "16.06.2023"
+    And The user created Ameliyat Listesi and Ameliyat İslemleri
+    And The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu
+    And The user enters the unit code and then presses refresh
+    And Check the Randevu Verildi text is seen on "16.06.2023"
+    And clicks to dropdown menu
+    And Clicks Randevu sil button from dropdown
+    And clicks to Evet
+    And The user confirms the deletion of the appointment
 
   @reg5
 #    Beyin Cerrahisi

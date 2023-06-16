@@ -15,7 +15,7 @@ Feature: Probel Ameliyathane İşlemleri
     Then Randevu Verildi text is seen
 
 
-@smoke1 @randevusil
+@smoke1
   Scenario: Ameliyat Listesi Oluşturma
 
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane Liste
@@ -42,7 +42,7 @@ Feature: Probel Ameliyathane İşlemleri
     And user taps on the Salon Islemleri
     And Approve the selected salon name
     ##And Approve pop-up message
-    And User selects patient from protocol number "15175989"
+   # And User selects patient from protocol number "15175989"
     And Patient is sent to the surgery hall
     And Clicks pop-up message
     Then Ameliyathaneye indirildi is visible

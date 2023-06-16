@@ -170,6 +170,13 @@ public class AmeliyathanePage {
     @FindBy(xpath = " ( //a[.='Randevu Sil'])[2]")
     public WebElement randevuSil;
 
+    @FindBy(xpath = "//table[@id='Ameliyat_Randevu_Liste_Paging_DXMainTable']")
+    public WebElement randevuSilTablo;
+
+    @FindBy(id ="btnAmeliyatRandevuListele")
+    public WebElement btnAmeliyatRandevuListele;
+
+
 
     // Ameliyathane İşlemleri Oluşturma - Refik
 
