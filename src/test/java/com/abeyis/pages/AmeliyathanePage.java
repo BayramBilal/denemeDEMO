@@ -336,8 +336,10 @@ public class AmeliyathanePage {
     public WebElement sablonTanimlama;
     @FindBy(id = "dxGridAmeliyatHastaListesi_DXDataRow0")
     public WebElement ameliyatHastaSec1;
-    @FindBy(xpath = "//a[@data-lookupvalue='5']")
+//    @FindBy(xpath = "//a[@data-lookupvalue='5']")
+    @FindBy(xpath = "//a[.='Seç']")
     public WebElement sablon1Sec;
+
     @FindBy(xpath = "//a[@data-lookupvalue='3']")
     public WebElement linkVerify2;
     @FindBy(xpath = "//a[@data-lookupvalue='1']")
