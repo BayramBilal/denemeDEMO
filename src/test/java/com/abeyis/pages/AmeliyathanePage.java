@@ -188,6 +188,11 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//td[.='KBB']")
     public WebElement KBBMasasi;
 
+    public void salonSecMethod(String salonAdı){
+        WebElement salon = Driver.getDriver().findElement(By.xpath("//td[.="+salonAdı+"]"));
+        salon.click();
+    }
+
     @FindBy(xpath = "//a[.='Salon Onayla']")
     public WebElement salonOnayla;
 
@@ -219,7 +224,7 @@ public class AmeliyathanePage {
 
     public WebElement popUpMessage;
 
-    @FindBy(css = "a[class*='bildir']")
+    @FindBy(xpath = "//a[@onclick='funcHastaindirildi()']")
     public WebElement linkHastaGiriYap;
 
 
