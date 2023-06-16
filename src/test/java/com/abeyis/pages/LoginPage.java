@@ -74,7 +74,8 @@ public class LoginPage {
     @FindBy (xpath = "//a[.='Ameliyat Malzemeleri İşleme']")
     public WebElement ameliyathaneMalzemeIslem;
 
-    @FindBy (xpath = "//*[@id=\"menuDurumDegis\"]/div[2]/div/ul/li/div/ul/li[2]/div/ul/li[2]/a")
+//    @FindBy (xpath = "//*[@id=\"menuDurumDegis\"]/div[2]/div/ul/li/div/ul/li[2]/div/ul/li[2]/a")
+    @FindBy (xpath = "(//a[.='Ameliyathane İşlemleri'])[2]")
     public WebElement ameliyathaneIslem;
 
 
