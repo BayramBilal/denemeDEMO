@@ -21,7 +21,8 @@ import org.junit.runner.RunWith;
         dryRun = false,
         stepNotifications = true,
         publish = true,
-        tags = "@smoke2"
+        tags = "@smoke1"
+
 )
 
 public class CukesRunner {
