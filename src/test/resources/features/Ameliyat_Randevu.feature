@@ -120,8 +120,8 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Enter "1006" and selects service
     And Clicks Yeni Randevu button
     And Selects patient using "15242294"
-    And Enters the Ameliyat-randevu "615441", "14.06.2023", "10", "00"
-    And Check the Randevu Verildi text is seen on "14.06.2023"
+    And Enters the Ameliyat-randevu "615441", "21.06.2023", "10", "00"
+    And Check the Randevu Verildi text is seen on "21.06.2023"
     And Select the patient from list to see the Randevu Raporu
     And Click the Randevu Raporu button from dropdown to access the report
     Then Check the Randevu Raporu is seen and close report

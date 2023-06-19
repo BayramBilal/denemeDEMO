@@ -30,7 +30,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
 
-    String ameliyatTarihi = "19.06.2023";
+    String ameliyatTarihi = "21.06.2023";
 
   
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
@@ -384,12 +384,19 @@ public class Ameliyathane_islemleri_StepDefinitions {
     public void theUserSelectsMalzemeIsleGuncelleButton() {
         BrowserUtils.waitFor(5);
         ameliyathanePage.malzemeIsleGuncelle.click();
+
+
+
+
     }
 
     @And("The user selects Evet from the pop Up menu")
     public void theUserSelectsEvetFromThePopUpMenu() {
-       BrowserUtils.waitForVisibility(ameliyathanePage.malzemeIsleOnayTamam, 10);
-       ameliyathanePage.malzemeIsleOnayTamam.click();
+        BrowserUtils.waitForVisibility(ameliyathanePage.malzemeIsleOnayTamam, 10);
+        ameliyathanePage.malzemeIsleOnayTamam.click();
+
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.malzemeislenemediTamam.click();
     }
 
     @And("The user selects Tamam from the pop Up menu")

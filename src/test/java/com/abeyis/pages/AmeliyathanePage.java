@@ -340,8 +340,14 @@ public class AmeliyathanePage {
 
     @FindBy(xpath = "//a[@onclick='funcSablonUygula(this)']")
     public WebElement sablonUygula;
+
+    @FindBy(xpath = "//span[.='Tamam']")
+    public WebElement malzemeislenemediTamam;
+
     @FindBy(xpath = "//a[@onclick='func_Malzemeleri_isle(this)']")
     public WebElement malzemeIsleGuncelle;
+
+
     @FindBy(xpath = "//a[@onclick='func_ilaclari_isle(this)']")
     public WebElement ilacIsleGuncelle;
     @FindBy(xpath = "//a[@onclick='SablonTanimlamaAc()']")

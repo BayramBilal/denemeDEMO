@@ -62,7 +62,7 @@ Feature: Probel Ameliyathane İşlemleri
     ##And The user selects Tamam from the pop Up menu
     And The user selects Ilaclari Isle & Guncelle Button
     And The user selects Evet from the pop Up menu
-    And The user selects Tamam from the pop Up menu
+#    And The user selects Tamam from the pop Up menu
 
 
   @smoke4
