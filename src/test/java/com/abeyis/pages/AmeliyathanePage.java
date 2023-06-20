@@ -19,6 +19,12 @@ public class AmeliyathanePage {
 
     // Ameliyat Randevu Oluşturma - Veli
 
+    @FindBy(xpath = "//td[.='İptal Edildi']")
+    public WebElement randevuiptal;
+
+
+
+
     @FindBy(xpath = "(//span[@class='hem_button hem_border hem_islem backWhite btnRndButonlar btnAcilirMenu'])[1]")
     public WebElement randevuDuzenlemeCarki;
 
@@ -196,9 +202,15 @@ public class AmeliyathanePage {
     public WebElement KBBMasasi;
 
     public void salonSecMethod(String salonAdı){
-        WebElement salon = Driver.getDriver().findElement(By.xpath("//td[.="+salonAdı+"]"));
+        WebElement salon = Driver.getDriver().findElement(By.xpath("//td[.='+salonAdı+']"));
         salon.click();
     }
+    @FindBy(xpath= "//td[.='Salon_1']")
+    public WebElement salonSec;
+
+    @FindBy(id= "dxGridAmeliyatHastaListesi_DXDataRow0")
+    public WebElement hastaSec;
+
 
     @FindBy(xpath = "//a[.='Salon Onayla']")
     public WebElement salonOnayla;
@@ -283,7 +295,7 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_3']")
     public WebElement HastaSecin;
 
-    @FindBy(id = "btnLstYenile")
+    @FindBy(xpath = "//a[@id='btnLstYenile']")
     public WebElement Yenile;
 
     @FindBy(xpath = "//button[.='Hasta Servise Döndü']")

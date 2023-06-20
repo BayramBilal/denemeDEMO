@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         stepNotifications = true,
         publish = true,
-        tags = "@login"
+        tags = "@reg3"
 
 )
 

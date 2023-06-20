@@ -12,8 +12,8 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Enter "2055" and selects service
     And Clicks Yeni Randevu button
     And Selects patient using "15256235"
-    And Enters the Ameliyat-randevu "617341", "12.06.2023", "15", "45"
-    Then Check the Randevu Verildi text is seen on "12.06.2023"
+    And Enters the Ameliyat-randevu "617341", "21.06.2023", "15", "45"
+    Then Check the Randevu Verildi text is seen on "21.06.2023"
 
   @reg1
 #    Göz Cerrahisi
@@ -75,8 +75,14 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Enter "1016" and selects service
     And Clicks Yeni Randevu button
     And Selects patient using "15387631"
-    And Enters the Ameliyat-randevu "550981", "14.06.2023", "15", "45"
-    Then Check the Randevu Verildi text is seen on "12.06.2023"
+    And Enters the Ameliyat-randevu "550981", "21.06.2023", "15", "45"
+    And Check the Randevu Verildi text is seen on "21.06.2023"
+    And clicks to dropdown menu
+    And Clicks Randevu iptal Et button from dropdown
+    And Selects the cancellation reason and save
+    And clicks the iptaller button
+    Then The user confirms the cancellation of the appointment
+
 
 
   @reg4

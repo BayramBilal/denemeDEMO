@@ -38,7 +38,7 @@ Feature: Probel Ameliyathane İşlemleri
     When the user hover over Ameliyathane İşlemleri and selects Ameliyathane islemleri
     And User selects appointment date
     ##And user selects surgery department in order to approve KBB
-    ##And User selects surgery department in order to approve the department "Salon_1"
+    And User selects surgery department in order to approve the department "Salon_1"
     And user taps on the Salon Islemleri
     And Approve the selected salon name
     ##And Approve pop-up message

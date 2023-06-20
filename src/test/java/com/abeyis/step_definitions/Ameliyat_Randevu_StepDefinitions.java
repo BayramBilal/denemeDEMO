@@ -20,8 +20,6 @@ public class Ameliyat_Randevu_StepDefinitions {
     Actions actions = new Actions(Driver.getDriver());
 
 
-
-
     @And("Enter {string} and selects service")
     public void enterAndSelectsService(String serviceCode) {
         BrowserUtils.waitFor(3);
@@ -69,7 +67,8 @@ public class Ameliyat_Randevu_StepDefinitions {
     @And("clicks to dropdown menu")
     public void clicksToDropdownMenu() {
         BrowserUtils.waitFor(3);
-        ameliyathanePage.çarksil.click();    }
+        ameliyathanePage.çarksil.click();
+    }
 
     @And("Clicks Randevu sil button from dropdown")
     public void clicksRandevuSilButtonFromDropdown() {
@@ -83,14 +82,37 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.Evet.click();
     }
 
+    //Refik
+    @And("Clicks Randevu iptal Et button from dropdown")
+    public void clicksRandevuIptalEtButtonFromDropdown() {
 
 
+
+    }
+
+    @And("Selects the cancellation reason and save")
+    public void selectsTheCancellationReasonAndSave() {
+
+
+    }
+
+    @And("clicks the iptaller button")
+    public void clicksTheIptallerButton() {
+
+
+    }
+
+    @Then("The user confirms the cancellation of the appointment")
+    public void theUserConfirmsTheCancellationOfTheAppointment() {
+
+        Assert.assertTrue(ameliyathanePage.randevuiptal.getText().contains("İptal Edildi"));
+    }
 
 
     //Bilal
     @And("Select the patient from list to see the Randevu Raporu")
     public void selectThePatientFromListToSeeTheRandevuRaporu() {
-    ameliyathanePage.randevuCark.click();
+        ameliyathanePage.randevuCark.click();
 
     }
 
@@ -182,7 +204,7 @@ public class Ameliyat_Randevu_StepDefinitions {
     @And("Enters ameliyatErteleTarihi {string} and ameliyatErteleNedeni {string}")
     public void entersAmeliyatErteleTarihiAndAmeliyatErteleNedeni(String tarih, String ertelemeNedeni) {
         ameliyathanePage.randevuErtelemeTarihi.sendKeys(tarih + Keys.ENTER);
-        Select ameliyatErteleNedeniSelect= new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
+        Select ameliyatErteleNedeniSelect = new Select(ameliyathanePage.randevuErtelemeNedeniDrpDwn);
         ameliyatErteleNedeniSelect.selectByVisibleText(ertelemeNedeni);
     }
 
@@ -202,14 +224,14 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     @And("The user confirms the deletion of the appointment")
     public void theUserConfirmsTheDeletionOfTheAppointment() {
-        System.out.println("randevu sil tablo= "+ ameliyathanePage.randevuSilTablo.getText());
+        System.out.println("randevu sil tablo= " + ameliyathanePage.randevuSilTablo.getText());
         Assert.assertTrue(ameliyathanePage.randevuSilTablo.getText().contains("15175989"));
     }
 
     @And("The user created Ameliyat Listesi and Ameliyat İslemleri")
     public void theUserCreatedAmeliyatListesiAndAmeliyatİslemleri() {
         //ameliyat listesi
-        Ameliyathane_islemleri_StepDefinitions ameliyathane_islemleri=new Ameliyathane_islemleri_StepDefinitions();
+        Ameliyathane_islemleri_StepDefinitions ameliyathane_islemleri = new Ameliyathane_islemleri_StepDefinitions();
         ameliyathane_islemleri.theUserHoverOverAmeliyathaneİşlemleriAndSelectsAmeliyathaneListe();
         ameliyathane_islemleri.selectsDateAndServiceInformation();
         ameliyathane_islemleri.addSalonFromSalonIslemleri();
@@ -241,4 +263,6 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020", Keys.ENTER);
         ameliyathanePage.btnAmeliyatRandevuListele.click();
     }
+
+
 }
