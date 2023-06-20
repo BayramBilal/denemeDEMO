@@ -245,8 +245,15 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @And("User selects surgery department in order to approve the department {string}")
     public void userSelectsSurgeryDepartmentInOrderToApproveTheDeparment(String salonAdı) {
         BrowserUtils.waitFor(3);
-        ameliyathanePage.salonSecMethod(salonAdı);
+//        ameliyathanePage.salonSecMethod(salonAdı);
+        ameliyathanePage.salonSec.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.tablotıkla.click();
+
+
+
     }
+
 
 
     @And("user taps on the Salon Islemleri")
