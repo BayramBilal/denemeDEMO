@@ -145,13 +145,13 @@ public class Ameliyat_Randevu_StepDefinitions {
     @And("clicks the iptaller button")
     public void clicksTheIptallerButton() {
 
-    BrowserUtils.waitFor(1);
-    ameliyathanePage.randevuİptallerCheck.click();
-    BrowserUtils.waitFor(1);
+        BrowserUtils.waitFor(1);
+        ameliyathanePage.randevuİptallerCheck.click();
+        BrowserUtils.waitFor(1);
 
-    WebElement randevusuIptalEdilenHasta = Driver.getDriver().findElement(By.xpath("//tr[@data-hasta-no='2011021193']"));
-    BrowserUtils.waitForVisibility(randevusuIptalEdilenHasta,5);
-    actions.moveToElement(randevusuIptalEdilenHasta).click().perform();
+        WebElement randevusuIptalEdilenHasta = Driver.getDriver().findElement(By.xpath("//tr[@data-hasta-no='2011021193']"));
+        BrowserUtils.waitForVisibility(randevusuIptalEdilenHasta, 5);
+        actions.moveToElement(randevusuIptalEdilenHasta).click().perform();
 
 
     }
