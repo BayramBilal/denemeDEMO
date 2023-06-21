@@ -22,13 +22,14 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//td[.='İptal Edildi']")
     public WebElement randevuiptal;
 
+    @FindBy(xpath = "(//a[.='İptal Geri Al'])[2]")
+    public WebElement iptalGeriAl;
 
-
+    @FindBy(xpath = "//span[.='Evet']")
+    public WebElement iptalGeriAlOnay;
 
     @FindBy(xpath = "(//span[@class='hem_button hem_border hem_islem backWhite btnRndButonlar btnAcilirMenu'])[1]")
     public WebElement randevuDuzenlemeCarki;
-
-
 
     @FindBy(id = "Ameliyat_Randevu_Liste_Paging_tccell0_0")
     public WebElement randevuCark;
