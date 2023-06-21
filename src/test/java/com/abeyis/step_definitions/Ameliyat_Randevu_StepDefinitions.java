@@ -7,10 +7,16 @@ import com.abeyis.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import com.abeyis.utilities.ConfigurationReader;
 import org.openqa.selenium.support.ui.Select;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class Ameliyat_Randevu_StepDefinitions {
 
@@ -85,19 +91,67 @@ public class Ameliyat_Randevu_StepDefinitions {
     //Refik
     @And("Clicks Randevu iptal Et button from dropdown")
     public void clicksRandevuIptalEtButtonFromDropdown() {
-
-
-
+        BrowserUtils.waitForClickablility(ameliyathanePage.randevuIptalEtButonu, 5);
+        ameliyathanePage.randevuIptalEtButonu.click();
     }
 
     @And("Selects the cancellation reason and save")
     public void selectsTheCancellationReasonAndSave() {
+
+        //ilk sayfada bulunan randevu iptal nedenleri bir Map'te toplanarak her test döngüsünde farklı bir iptal nedeninin gelmesi sağlanmıştır.
+        Map<Integer, String> iptalNedenleri = new HashMap<Integer, String>();
+        iptalNedenleri.put(1, "/1 GÜN SONRASI İÇİN  OPERASYONA KARAR VERİLDİ");
+        iptalNedenleri.put(2, "ACİL OLARAK OPERE EDİLMİŞ");
+        iptalNedenleri.put(4, "Vital bulgu değerlerinde değişiklik");
+        iptalNedenleri.put(5, "Operasyon için kullanılacak malzemenin olmaması/yetersizliği");
+        iptalNedenleri.put(6, "Hipoglisemi/Hiperglisemi");
+        iptalNedenleri.put(7, "Hipotiroid/Hipertiroid");
+        iptalNedenleri.put(8, "Anemi");
+        iptalNedenleri.put(9, "Hastanın ameliyat olmak istememesi/başka hastaneye gitmek istemesi");
+        iptalNedenleri.put(10, "Hekim değişikliği");
+        iptalNedenleri.put(11, "Hasta gelmedi");
+        iptalNedenleri.put(12, "Hastaya anestezi verilememesi");
+        iptalNedenleri.put(13, "Bilgilendirme kurallarına uymama");
+        iptalNedenleri.put(14, "Ameliyat süresinin uzaması");
+        iptalNedenleri.put(15, "Malzeme / Cihaz Eksikligi");
+        iptalNedenleri.put(16, "Hastada enfeksiyon tespit edilmesi");
+
+
+        Random randomNum = new Random();
+        int randomReason = randomNum.nextInt(17);
+        System.out.println("Randevu İptal Nedeni = " + iptalNedenleri.get(randomReason));
+        String randomReasonCasting = "" + randomReason;
+
+        WebElement iptalNedenleriInput = Driver.getDriver().findElement(By.name("IPTAL_NEDEN"));
+        iptalNedenleriInput.click();
+        BrowserUtils.waitFor(2);
+        iptalNedenleriInput.sendKeys(Keys.ENTER);
+
+        BrowserUtils.waitForVisibility(Driver.getDriver().findElement(By.xpath("(//div[@class='PopupContent'])[2]")), 5);
+        Driver.getDriver().findElement(By.id("AmeliyatIptalNedenListe_DXFREditorcol1_I")).click();
+        Driver.getDriver().findElement(By.id("AmeliyatIptalNedenListe_DXFREditorcol1_I")).sendKeys(randomReasonCasting);
+
+        WebElement iptalNedeniSeçmeButonu = Driver.getDriver().findElement(By.xpath("//a[@data-lookupvalue=" + randomReason + "]"));
+        BrowserUtils.waitForVisibility(iptalNedeniSeçmeButonu, 3);
+        iptalNedeniSeçmeButonu.click();
+
+        WebElement iptalNedeniKaydetButonu = Driver.getDriver().findElement(By.id("PopupSaveButton_0"));
+        iptalNedeniKaydetButonu.click();
+        BrowserUtils.waitFor(1);
 
 
     }
 
     @And("clicks the iptaller button")
     public void clicksTheIptallerButton() {
+
+    BrowserUtils.waitFor(1);
+    ameliyathanePage.randevuİptallerCheck.click();
+    BrowserUtils.waitFor(1);
+
+    WebElement randevusuIptalEdilenHasta = Driver.getDriver().findElement(By.xpath("//tr[@data-hasta-no='2011021193']"));
+    BrowserUtils.waitForVisibility(randevusuIptalEdilenHasta,5);
+    actions.moveToElement(randevusuIptalEdilenHasta).click().perform();
 
 
     }

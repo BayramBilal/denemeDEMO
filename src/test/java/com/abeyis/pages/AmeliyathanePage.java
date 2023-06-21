@@ -262,6 +262,9 @@ public class AmeliyathanePage {
         approveMessage.click();
     }
 
+    @FindBy(xpath = "(//a[.='Randevu İptal Et'])[2]" )
+    public WebElement randevuIptalEtButonu;
+
     // Doktor Ameliyathane İşlemleri - Bilal
 
     @FindBy(xpath = "//tbody//td[@id='dxGridAmeliyatHastaListesi_tccell0_2']")
@@ -340,7 +343,8 @@ public class AmeliyathanePage {
     @FindBy(xpath = "//span[.='Kapat']")
     public WebElement PostopKapat;
 
-
+    @FindBy(xpath = "//label[@class='lbl_check no-margin']")
+    public WebElement randevuİptallerCheck;
 
     // Ameliyathane Malzeme İşlemleri - Timur
 
