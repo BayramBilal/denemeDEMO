@@ -162,6 +162,15 @@ public class Ameliyat_Randevu_StepDefinitions {
         Assert.assertTrue(ameliyathanePage.randevuiptal.getText().contains("İptal Edildi"));
     }
 
+    @And("Clicks iptal Geri Al button to restore cancellation and approve")
+    public void clicksIptalGeriAlButtonToRestoreCancellationAndApprove() {
+
+        ameliyathanePage.iptalGeriAl.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.iptalGeriAlOnay.click();
+
+    }
+
 
     //Bilal
     @And("Select the patient from list to see the Randevu Raporu")
@@ -317,6 +326,7 @@ public class Ameliyat_Randevu_StepDefinitions {
         ameliyathanePage.AmeliyatBirimKodu.sendKeys("1020", Keys.ENTER);
         ameliyathanePage.btnAmeliyatRandevuListele.click();
     }
+
 
 
 }

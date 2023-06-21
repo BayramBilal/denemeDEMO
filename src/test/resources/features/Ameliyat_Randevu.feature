@@ -82,6 +82,13 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Selects the cancellation reason and save
     And clicks the iptaller button
     Then The user confirms the cancellation of the appointment
+    And clicks to dropdown menu
+    And Clicks iptal Geri Al button to restore cancellation and approve
+    And clicks the iptaller button
+    Then Check the Randevu Verildi text is seen on "21.06.2023"
+    And clicks to dropdown menu
+    And Clicks Randevu sil button from dropdown
+    And clicks to Evet
 
 
 
