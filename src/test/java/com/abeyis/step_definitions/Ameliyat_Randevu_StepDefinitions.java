@@ -61,9 +61,14 @@ public class Ameliyat_Randevu_StepDefinitions {
     @Then("Check the Randevu Verildi text is seen on {string}")
     public void checkTheRandevuVerildiTextIsSeenOn(String date) {
         BrowserUtils.waitFor(3);
-        ameliyathanePage.RandevuTarihSon.click();
+        ameliyathanePage.RandevuTarihBas.click();
         BrowserUtils.waitFor(3);
-        ameliyathanePage.RandevuTarihSon.sendKeys(date, Keys.ENTER);
+        ameliyathanePage.RandevuTarihBas.sendKeys(date, Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihBit.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihBit.sendKeys(date, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihYenile.click();
         BrowserUtils.waitFor(3);
@@ -241,7 +246,7 @@ public class Ameliyat_Randevu_StepDefinitions {
 
     @And("Clicks ameliyatErteleRandevuDropDown")
     public void clicksAmeliyatErteleRandevuDropDown() {
-        BrowserUtils.jsclick(ameliyathanePage.ameliyatRandevuErteleDropdown1);
+        BrowserUtils.jsclick(ameliyathanePage.randevuDuzenlemeCarki);
 
     }
 

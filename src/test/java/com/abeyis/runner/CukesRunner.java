@@ -21,7 +21,7 @@ import org.junit.runner.RunWith;
         dryRun = false,
         stepNotifications = true,
         publish = true,
-        tags = "@reg3"
+        tags = "@reg6"
 
 )
 

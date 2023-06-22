@@ -30,7 +30,7 @@ public class Ameliyathane_islemleri_StepDefinitions {
 
 
 
-    String ameliyatTarihi = "21.06.2023";
+    String ameliyatTarihi = "23.06.2023";
 
   
     @When("The user hover over Ameliyathane İşlemleri and selects Ameliyat Randevu")
@@ -85,9 +85,13 @@ public class Ameliyathane_islemleri_StepDefinitions {
     @Then("Randevu Verildi text is seen")
     public void randevu_verildi_text_is_seen() {
         BrowserUtils.waitFor(3);
-        ameliyathanePage.RandevuTarihSon.click();
-        BrowserUtils.waitFor(1);
-        ameliyathanePage.RandevuTarihSon.sendKeys(ameliyatTarihi, Keys.ENTER);
+        ameliyathanePage.RandevuTarihBas.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihBas.sendKeys(ameliyatTarihi, Keys.ENTER);
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihBit.click();
+        BrowserUtils.waitFor(3);
+        ameliyathanePage.RandevuTarihBit.sendKeys(ameliyatTarihi, Keys.ENTER);
         BrowserUtils.waitFor(3);
         ameliyathanePage.RandevuTarihYenile.click();
         BrowserUtils.waitFor(3);

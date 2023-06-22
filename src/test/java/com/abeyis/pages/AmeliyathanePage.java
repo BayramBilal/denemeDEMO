@@ -78,8 +78,11 @@ public class AmeliyathanePage {
     public WebElement randevuDakika;
     @FindBy(id = "RANDEVU_TARIHI")
     public WebElement tarihRandevu;
-    @FindBy(id = "TXT_TARIH")
-    public WebElement RandevuTarihSon;
+    @FindBy(id = "TXT_BAS_TARIH")
+    public WebElement RandevuTarihBas;
+
+    @FindBy(id = "TXT_BIT_TARIH")
+    public WebElement RandevuTarihBit;
     @FindBy(id = "btnAmeliyatRandevuListele")
     public WebElement RandevuTarihYenile;
     @FindBy(xpath = "//tbody//td[contains(text(),'Randevu Verildi')]")
@@ -127,7 +130,7 @@ public class AmeliyathanePage {
     public WebElement AmeliyatSaat;
     @FindBy(xpath = "//a[.='Ameliyat Ekle']")
     public WebElement AmeliyatEkle;
-    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[8]")
+    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[9]")
     public WebElement YapilacakAmeliyat;
     @FindBy(xpath= "(//*[@class='LookupSelectButton text_btn text_btn_ok backWhite'])[1]")
     public WebElement YapilacakAmeliyatSec;
@@ -135,7 +138,7 @@ public class AmeliyathanePage {
     public WebElement AmeliyatYon;
     @FindBy(id = "KesiCombo")
     public WebElement KesBilgisi;
-    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[9]")
+    @FindBy(xpath = "(//*[@class='inpt  lookupOpenButton'])[10]")
     public WebElement DoktorSecUcNokta;
     @FindBy(xpath = "//tbody//td[@id='sevkEdenDoktorList_tccell0_2']")
     public WebElement DoktorSec;
