@@ -23,11 +23,11 @@ Feature: Probel Ameliyathane İşlemleri Ravdevu Verme
     And Enter "2055" and selects service
     And Clicks Yeni Randevu button
     And Selects patient using "15256235"
-    And Enters the Ameliyat-randevu "617341", "23.06.2023", "15", "45"
-    And Check the Randevu Verildi text is seen on "23.06.2023"
+    And Enters the Ameliyat-randevu "617341", "26.06.2023", "15", "45"
+    And Check the Randevu Verildi text is seen on "26.06.2023"
     And Click randevu düzenleme button and select randevu düzelt option
-    And Enters the Ameliyat-randevu "617010", "26.06.2023", "09", "00"
-    Then Check the Randevu Verildi text is seen on "26.06.2023"
+    And Enters the Ameliyat-randevu "617010", "27.06.2023", "09", "00"
+    Then Check the Randevu Verildi text is seen on "27.06.2023"
 
 
   @reg2
